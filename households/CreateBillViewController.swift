@@ -19,6 +19,7 @@ class CreateBillViewController: UIViewController {
     var currentOccupancyForNewBill: PFObject?
     
     override func viewDidLoad() {
+        print("Ajfkdsl;")
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         // print(currentOccupancyForNewBill)
