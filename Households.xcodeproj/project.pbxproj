@@ -1,0 +1,922 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C1388441C60529300862041 /* DSC_1133.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 7C1388431C60529300862041 /* DSC_1133.JPG */; };
+		7C1388461C6069CF00862041 /* Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C1388451C6069CF00862041 /* Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg */; };
+		7C1388481C606AB200862041 /* key_img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1388471C606AB200862041 /* key_img2.png */; };
+		7C13884E1C60744C00862041 /* AssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C13884D1C60744C00862041 /* AssignmentTableViewController.swift */; };
+		7C1388501C60745400862041 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C13884F1C60745400862041 /* Assignment.swift */; };
+		7C1388521C60745F00862041 /* AssignmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1388511C60745F00862041 /* AssignmentTableViewCell.swift */; };
+		7C1388541C6074B500862041 /* cleaning-lady-room-service-icon-isolated_154306967.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C1388531C6074B500862041 /* cleaning-lady-room-service-icon-isolated_154306967.jpg */; };
+		7C5B06071C5F307700E137E4 /* DSC_1152.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 7C5B06061C5F307700E137E4 /* DSC_1152.JPG */; };
+		7C5B060C1C5F409200E137E4 /* OccupyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B060B1C5F409200E137E4 /* OccupyTableViewController.swift */; };
+		7C5B060E1C5F40B500E137E4 /* Occupy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B060D1C5F40B500E137E4 /* Occupy.swift */; };
+		7C5B06101C5F40C400E137E4 /* OccupyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B060F1C5F40C400E137E4 /* OccupyTableViewCell.swift */; };
+		7C8824441C73262100803A7C /* grocery-bag.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C8824431C73262100803A7C /* grocery-bag.jpg */; };
+		7C9C503A1C5DCB3E00B3C694 /* HouseholdTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C50391C5DCB3E00B3C694 /* HouseholdTableViewController.swift */; };
+		7CA73BD91C5DF3FB00218BD5 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA73BD81C5DF3FB00218BD5 /* ParseUI.framework */; };
+		7CC399421C6A1BD200D87B7F /* GroceryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC399411C6A1BD200D87B7F /* GroceryTableViewController.swift */; };
+		7CC399441C6A1BDD00D87B7F /* Grocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC399431C6A1BDD00D87B7F /* Grocery.swift */; };
+		7CC3994B1C6A1C4600D87B7F /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3994A1C6A1C4600D87B7F /* Listing.swift */; };
+		7CC3994D1C6A1C5400D87B7F /* ListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3994C1C6A1C5400D87B7F /* ListingTableViewController.swift */; };
+		7CC3994F1C6A1C6500D87B7F /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3994E1C6A1C6500D87B7F /* ListingTableViewCell.swift */; };
+		7CC399511C6A1C8A00D87B7F /* CreateListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC399501C6A1C8A00D87B7F /* CreateListingTableViewController.swift */; };
+		7CC399531C6A1F2200D87B7F /* CreateGroceryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC399521C6A1F2200D87B7F /* CreateGroceryViewController.swift */; };
+		7CC399551C6A62CF00D87B7F /* GroceryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC399541C6A62CF00D87B7F /* GroceryTableViewCell.swift */; };
+		7CDE1F3A1C610749007E9DC2 /* CreateAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDE1F391C610749007E9DC2 /* CreateAssignmentViewController.swift */; };
+		7CDF98191C737BD20020A6C7 /* TBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF98181C737BD20020A6C7 /* TBC.swift */; };
+		7CDF981C1C73870F0020A6C7 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF981B1C73870F0020A6C7 /* Bill.swift */; };
+		7CDF981F1C7389FC0020A6C7 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF981E1C7389FC0020A6C7 /* Payment.swift */; };
+		7CDF98211C738B2E0020A6C7 /* BillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF98201C738B2E0020A6C7 /* BillTableViewController.swift */; };
+		7CDF98251C738E520020A6C7 /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF98241C738E520020A6C7 /* BillTableViewCell.swift */; };
+		7CDF98271C73956C0020A6C7 /* BillParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF98261C73956C0020A6C7 /* BillParentViewController.swift */; };
+		7CF53F1B1C78CC5900353F4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF53F1A1C78CC5900353F4F /* LaunchScreen.storyboard */; };
+		7CF53F201C7902C800353F4F /* CreateBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF53F1F1C7902C800353F4F /* CreateBillViewController.swift */; };
+		7CF53F341C79467700353F4F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF53F331C79467700353F4F /* SWRevealViewController.m */; };
+		7CFEE5601C5BD8EB000AEEB7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE55F1C5BD8EB000AEEB7 /* LoginViewController.swift */; };
+		7CFEE5621C5BD94D000AEEB7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE5611C5BD94D000AEEB7 /* RegisterViewController.swift */; };
+		7CFEE5641C5BD996000AEEB7 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE5631C5BD996000AEEB7 /* ResetPasswordViewController.swift */; };
+		7CFEE5691C5BE02D000AEEB7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFEE5681C5BE02D000AEEB7 /* CFNetwork.framework */; };
+		7CFEE56B1C5BE036000AEEB7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFEE56A1C5BE036000AEEB7 /* CoreGraphics.framework */; };
+		7CFEE56D1C5BE03C000AEEB7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFEE56C1C5BE03C000AEEB7 /* CoreLocation.framework */; };
+		7CFEE56F1C5BE047000AEEB7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFEE56E1C5BE047000AEEB7 /* QuartzCore.framework */; };
+		7CFEE5711C5BE04D000AEEB7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFEE5701C5BE04D000AEEB7 /* Security.framework */; };
+		7CFEE5731C5BE056000AEEB7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFEE5721C5BE056000AEEB7 /* StoreKit.framework */; };
+		7CFEE5751C5BE066000AEEB7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFEE5741C5BE066000AEEB7 /* libz.tbd */; };
+		7CFEE5771C5BE06D000AEEB7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFEE5761C5BE06D000AEEB7 /* libsqlite3.tbd */; };
+		7CFEE57D1C5D0B6A000AEEB7 /* Chore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE57C1C5D0B6A000AEEB7 /* Chore.swift */; };
+		7CFEE57F1C5D0B86000AEEB7 /* ChoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE57E1C5D0B86000AEEB7 /* ChoreTableViewController.swift */; };
+		7CFEE5811C5D0BA1000AEEB7 /* CreateChoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE5801C5D0BA1000AEEB7 /* CreateChoreViewController.swift */; };
+		7CFEE5831C5D0BBE000AEEB7 /* ChoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE5821C5D0BBE000AEEB7 /* ChoreTableViewCell.swift */; };
+		7CFEE58F1C5D832B000AEEB7 /* Household.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE58E1C5D832B000AEEB7 /* Household.swift */; };
+		7CFEE5931C5D8353000AEEB7 /* CreateHouseholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE5921C5D8353000AEEB7 /* CreateHouseholdViewController.swift */; };
+		7CFEE5951C5D8364000AEEB7 /* HouseholdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE5941C5D8364000AEEB7 /* HouseholdTableViewCell.swift */; };
+		7CFEE5971C5D89A2000AEEB7 /* JoinExistingGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE5961C5D89A2000AEEB7 /* JoinExistingGroupViewController.swift */; };
+		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
+		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
+		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
+		81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816B1A49DB6800E65899 /* Bolts.framework */; };
+		81BA81711A49DB6800E65899 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816C1A49DB6800E65899 /* Parse.framework */; };
+		81BA81771A49E0D500E65899 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81761A49E0D500E65899 /* libsqlite3.dylib */; };
+		81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81781A49E0DB00E65899 /* AudioToolbox.framework */; };
+		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
+		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7C1388431C60529300862041 /* DSC_1133.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC_1133.JPG; sourceTree = "<group>"; };
+		7C1388451C6069CF00862041 /* Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg; sourceTree = "<group>"; };
+		7C1388471C606AB200862041 /* key_img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = key_img2.png; sourceTree = "<group>"; };
+		7C13884D1C60744C00862041 /* AssignmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewController.swift; sourceTree = "<group>"; };
+		7C13884F1C60745400862041 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		7C1388511C60745F00862041 /* AssignmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewCell.swift; sourceTree = "<group>"; };
+		7C1388531C6074B500862041 /* cleaning-lady-room-service-icon-isolated_154306967.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cleaning-lady-room-service-icon-isolated_154306967.jpg"; sourceTree = "<group>"; };
+		7C5B06061C5F307700E137E4 /* DSC_1152.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC_1152.JPG; sourceTree = "<group>"; };
+		7C5B060B1C5F409200E137E4 /* OccupyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccupyTableViewController.swift; sourceTree = "<group>"; };
+		7C5B060D1C5F40B500E137E4 /* Occupy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Occupy.swift; sourceTree = "<group>"; };
+		7C5B060F1C5F40C400E137E4 /* OccupyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccupyTableViewCell.swift; sourceTree = "<group>"; };
+		7C8824431C73262100803A7C /* grocery-bag.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grocery-bag.jpg"; sourceTree = "<group>"; };
+		7C9C50361C5DCB2600B3C694 /* Households.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Households.xcodeproj; sourceTree = "<group>"; };
+		7C9C50391C5DCB3E00B3C694 /* HouseholdTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseholdTableViewController.swift; sourceTree = "<group>"; };
+		7CA73B921C5DF21200218BD5 /* PFCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFCollectionViewCell.h; sourceTree = "<group>"; };
+		7CA73B931C5DF21200218BD5 /* PFCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFCollectionViewCell.m; sourceTree = "<group>"; };
+		7CA73B941C5DF21200218BD5 /* PFPurchaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFPurchaseTableViewCell.h; sourceTree = "<group>"; };
+		7CA73B951C5DF21200218BD5 /* PFPurchaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFPurchaseTableViewCell.m; sourceTree = "<group>"; };
+		7CA73B961C5DF21200218BD5 /* PFTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFTableViewCell.h; sourceTree = "<group>"; };
+		7CA73B971C5DF21200218BD5 /* PFTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFTableViewCell.m; sourceTree = "<group>"; };
+		7CA73B9A1C5DF21200218BD5 /* PFActivityIndicatorCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFActivityIndicatorCollectionReusableView.h; sourceTree = "<group>"; };
+		7CA73B9B1C5DF21200218BD5 /* PFActivityIndicatorCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFActivityIndicatorCollectionReusableView.m; sourceTree = "<group>"; };
+		7CA73B9C1C5DF21200218BD5 /* PFActivityIndicatorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFActivityIndicatorTableViewCell.h; sourceTree = "<group>"; };
+		7CA73B9D1C5DF21200218BD5 /* PFActivityIndicatorTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFActivityIndicatorTableViewCell.m; sourceTree = "<group>"; };
+		7CA73B9F1C5DF21200218BD5 /* PFAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFAlertView.h; sourceTree = "<group>"; };
+		7CA73BA01C5DF21200218BD5 /* PFAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFAlertView.m; sourceTree = "<group>"; };
+		7CA73BA11C5DF21200218BD5 /* PFColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFColor.h; sourceTree = "<group>"; };
+		7CA73BA21C5DF21200218BD5 /* PFColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFColor.m; sourceTree = "<group>"; };
+		7CA73BA31C5DF21200218BD5 /* PFImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFImage.h; sourceTree = "<group>"; };
+		7CA73BA41C5DF21200218BD5 /* PFImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFImage.m; sourceTree = "<group>"; };
+		7CA73BA51C5DF21200218BD5 /* PFRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFRect.h; sourceTree = "<group>"; };
+		7CA73BA61C5DF21200218BD5 /* PFRect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFRect.m; sourceTree = "<group>"; };
+		7CA73BA71C5DF21200218BD5 /* PFImageCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFImageCache.h; sourceTree = "<group>"; };
+		7CA73BA81C5DF21200218BD5 /* PFImageCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFImageCache.m; sourceTree = "<group>"; };
+		7CA73BA91C5DF21200218BD5 /* PFLocalization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFLocalization.h; sourceTree = "<group>"; };
+		7CA73BAC1C5DF21200218BD5 /* PFActionButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFActionButton.h; sourceTree = "<group>"; };
+		7CA73BAD1C5DF21200218BD5 /* PFActionButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFActionButton.m; sourceTree = "<group>"; };
+		7CA73BAE1C5DF21200218BD5 /* PFDismissButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFDismissButton.h; sourceTree = "<group>"; };
+		7CA73BAF1C5DF21200218BD5 /* PFDismissButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFDismissButton.m; sourceTree = "<group>"; };
+		7CA73BB01C5DF21200218BD5 /* PFPrimaryButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFPrimaryButton.h; sourceTree = "<group>"; };
+		7CA73BB11C5DF21200218BD5 /* PFPrimaryButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFPrimaryButton.m; sourceTree = "<group>"; };
+		7CA73BB21C5DF21200218BD5 /* PFTextButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFTextButton.h; sourceTree = "<group>"; };
+		7CA73BB31C5DF21200218BD5 /* PFTextButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFTextButton.m; sourceTree = "<group>"; };
+		7CA73BB41C5DF21200218BD5 /* PFLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFLoadingView.h; sourceTree = "<group>"; };
+		7CA73BB51C5DF21200218BD5 /* PFLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFLoadingView.m; sourceTree = "<group>"; };
+		7CA73BB71C5DF21200218BD5 /* PFLogInView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFLogInView.h; sourceTree = "<group>"; };
+		7CA73BB81C5DF21200218BD5 /* PFLogInView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFLogInView.m; sourceTree = "<group>"; };
+		7CA73BB91C5DF21200218BD5 /* PFLogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFLogInViewController.h; sourceTree = "<group>"; };
+		7CA73BBA1C5DF21200218BD5 /* PFLogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFLogInViewController.m; sourceTree = "<group>"; };
+		7CA73BBC1C5DF21200218BD5 /* PFProductTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFProductTableViewController.h; sourceTree = "<group>"; };
+		7CA73BBD1C5DF21200218BD5 /* PFProductTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFProductTableViewController.m; sourceTree = "<group>"; };
+		7CA73BBF1C5DF21200218BD5 /* PFQueryCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFQueryCollectionViewController.h; sourceTree = "<group>"; };
+		7CA73BC01C5DF21200218BD5 /* PFQueryCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFQueryCollectionViewController.m; sourceTree = "<group>"; };
+		7CA73BC21C5DF21200218BD5 /* PFQueryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFQueryTableViewController.h; sourceTree = "<group>"; };
+		7CA73BC31C5DF21200218BD5 /* PFQueryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFQueryTableViewController.m; sourceTree = "<group>"; };
+		7CA73BC51C5DF21200218BD5 /* PFSignUpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFSignUpView.h; sourceTree = "<group>"; };
+		7CA73BC61C5DF21200218BD5 /* PFSignUpView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFSignUpView.m; sourceTree = "<group>"; };
+		7CA73BC71C5DF21200218BD5 /* PFSignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFSignUpViewController.h; sourceTree = "<group>"; };
+		7CA73BC81C5DF21200218BD5 /* PFSignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFSignUpViewController.m; sourceTree = "<group>"; };
+		7CA73BCA1C5DF21200218BD5 /* PFImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFImageView.h; sourceTree = "<group>"; };
+		7CA73BCB1C5DF21200218BD5 /* PFImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFImageView.m; sourceTree = "<group>"; };
+		7CA73BCC1C5DF21200218BD5 /* PFTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFTextField.h; sourceTree = "<group>"; };
+		7CA73BCD1C5DF21200218BD5 /* PFTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFTextField.m; sourceTree = "<group>"; };
+		7CA73BCF1C5DF21200218BD5 /* PFResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFResources.h; sourceTree = "<group>"; };
+		7CA73BD01C5DF21200218BD5 /* PFResources.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFResources.m; sourceTree = "<group>"; };
+		7CA73BD21C5DF21200218BD5 /* ParseUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseUI.h; sourceTree = "<group>"; };
+		7CA73BD31C5DF21200218BD5 /* ParseUIConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseUIConstants.h; sourceTree = "<group>"; };
+		7CA73BD71C5DF21200218BD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ParseUI.strings; sourceTree = "<group>"; };
+		7CA73BD81C5DF3FB00218BD5 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../Job Manager Tools/ParseUI.framework"; sourceTree = "<group>"; };
+		7CC399411C6A1BD200D87B7F /* GroceryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryTableViewController.swift; sourceTree = "<group>"; };
+		7CC399431C6A1BDD00D87B7F /* Grocery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grocery.swift; sourceTree = "<group>"; };
+		7CC3994A1C6A1C4600D87B7F /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
+		7CC3994C1C6A1C5400D87B7F /* ListingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingTableViewController.swift; sourceTree = "<group>"; };
+		7CC3994E1C6A1C6500D87B7F /* ListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingTableViewCell.swift; sourceTree = "<group>"; };
+		7CC399501C6A1C8A00D87B7F /* CreateListingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateListingTableViewController.swift; sourceTree = "<group>"; };
+		7CC399521C6A1F2200D87B7F /* CreateGroceryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroceryViewController.swift; sourceTree = "<group>"; };
+		7CC399541C6A62CF00D87B7F /* GroceryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryTableViewCell.swift; sourceTree = "<group>"; };
+		7CDE1F391C610749007E9DC2 /* CreateAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAssignmentViewController.swift; sourceTree = "<group>"; };
+		7CDF98181C737BD20020A6C7 /* TBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBC.swift; sourceTree = "<group>"; };
+		7CDF981B1C73870F0020A6C7 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		7CDF981E1C7389FC0020A6C7 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		7CDF98201C738B2E0020A6C7 /* BillTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillTableViewController.swift; sourceTree = "<group>"; };
+		7CDF98241C738E520020A6C7 /* BillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
+		7CDF98261C73956C0020A6C7 /* BillParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillParentViewController.swift; sourceTree = "<group>"; };
+		7CF53F1A1C78CC5900353F4F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7CF53F1F1C7902C800353F4F /* CreateBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBillViewController.swift; sourceTree = "<group>"; };
+		7CF53F321C79467700353F4F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		7CF53F331C79467700353F4F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		7CFEE55F1C5BD8EB000AEEB7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7CFEE5611C5BD94D000AEEB7 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		7CFEE5631C5BD996000AEEB7 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		7CFEE5681C5BE02D000AEEB7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7CFEE56A1C5BE036000AEEB7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7CFEE56C1C5BE03C000AEEB7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7CFEE56E1C5BE047000AEEB7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7CFEE5701C5BE04D000AEEB7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7CFEE5721C5BE056000AEEB7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7CFEE5741C5BE066000AEEB7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		7CFEE5761C5BE06D000AEEB7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		7CFEE57C1C5D0B6A000AEEB7 /* Chore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chore.swift; sourceTree = "<group>"; };
+		7CFEE57E1C5D0B86000AEEB7 /* ChoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoreTableViewController.swift; sourceTree = "<group>"; };
+		7CFEE5801C5D0BA1000AEEB7 /* CreateChoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChoreViewController.swift; sourceTree = "<group>"; };
+		7CFEE5821C5D0BBE000AEEB7 /* ChoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoreTableViewCell.swift; sourceTree = "<group>"; };
+		7CFEE5881C5D0DE3000AEEB7 /* Households-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Households-Bridging-Header.h"; path = "../Households-Bridging-Header.h"; sourceTree = "<group>"; };
+		7CFEE58E1C5D832B000AEEB7 /* Household.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Household.swift; sourceTree = "<group>"; };
+		7CFEE5921C5D8353000AEEB7 /* CreateHouseholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateHouseholdViewController.swift; sourceTree = "<group>"; };
+		7CFEE5941C5D8364000AEEB7 /* HouseholdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseholdTableViewCell.swift; sourceTree = "<group>"; };
+		7CFEE5961C5D89A2000AEEB7 /* JoinExistingGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinExistingGroupViewController.swift; sourceTree = "<group>"; };
+		814C3AC71B69877600E307BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81BA81451A49DA1800E65899 /* Households.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Households.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81BA814A1A49DA1800E65899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		81BA816B1A49DB6800E65899 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		81BA816C1A49DB6800E65899 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		81BA816E1A49DB6800E65899 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		81BA81761A49E0D500E65899 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		81BA81781A49E0DB00E65899 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81BA81421A49DA1800E65899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA73BD91C5DF3FB00218BD5 /* ParseUI.framework in Frameworks */,
+				7CFEE5771C5BE06D000AEEB7 /* libsqlite3.tbd in Frameworks */,
+				7CFEE5751C5BE066000AEEB7 /* libz.tbd in Frameworks */,
+				7CFEE5731C5BE056000AEEB7 /* StoreKit.framework in Frameworks */,
+				7CFEE56D1C5BE03C000AEEB7 /* CoreLocation.framework in Frameworks */,
+				7CFEE56B1C5BE036000AEEB7 /* CoreGraphics.framework in Frameworks */,
+				7CFEE5691C5BE02D000AEEB7 /* CFNetwork.framework in Frameworks */,
+				81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */,
+				81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */,
+				81BA81771A49E0D500E65899 /* libsqlite3.dylib in Frameworks */,
+				81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */,
+				7CFEE5711C5BE04D000AEEB7 /* Security.framework in Frameworks */,
+				81BA81711A49DB6800E65899 /* Parse.framework in Frameworks */,
+				81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */,
+				7CFEE56F1C5BE047000AEEB7 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C13884C1C60743900862041 /* Assignment */ = {
+			isa = PBXGroup;
+			children = (
+				7C13884D1C60744C00862041 /* AssignmentTableViewController.swift */,
+				7C13884F1C60745400862041 /* Assignment.swift */,
+				7C1388511C60745F00862041 /* AssignmentTableViewCell.swift */,
+				7CDE1F391C610749007E9DC2 /* CreateAssignmentViewController.swift */,
+			);
+			name = Assignment;
+			sourceTree = "<group>";
+		};
+		7C5B060A1C5F406D00E137E4 /* Occupy */ = {
+			isa = PBXGroup;
+			children = (
+				7C5B060B1C5F409200E137E4 /* OccupyTableViewController.swift */,
+				7C5B060D1C5F40B500E137E4 /* Occupy.swift */,
+				7C5B060F1C5F40C400E137E4 /* OccupyTableViewCell.swift */,
+			);
+			name = Occupy;
+			sourceTree = "<group>";
+		};
+		7C9C50371C5DCB2600B3C694 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7CA73B8F1C5DF21200218BD5 /* ParseUI */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73B901C5DF21200218BD5 /* Classes */,
+				7CA73BCE1C5DF21200218BD5 /* Generated */,
+				7CA73BD11C5DF21200218BD5 /* Other */,
+				7CA73BD41C5DF21200218BD5 /* Resources */,
+			);
+			name = ParseUI;
+			path = ../../../Downloads/Paws/Pods/ParseUI/ParseUI;
+			sourceTree = "<group>";
+		};
+		7CA73B901C5DF21200218BD5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73B911C5DF21200218BD5 /* Cells */,
+				7CA73B981C5DF21200218BD5 /* Internal */,
+				7CA73BB61C5DF21200218BD5 /* LogInViewController */,
+				7CA73BBB1C5DF21200218BD5 /* ProductTableViewController */,
+				7CA73BBE1C5DF21200218BD5 /* QueryCollectionViewController */,
+				7CA73BC11C5DF21200218BD5 /* QueryTableViewController */,
+				7CA73BC41C5DF21200218BD5 /* SignUpViewController */,
+				7CA73BC91C5DF21200218BD5 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7CA73B911C5DF21200218BD5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73B921C5DF21200218BD5 /* PFCollectionViewCell.h */,
+				7CA73B931C5DF21200218BD5 /* PFCollectionViewCell.m */,
+				7CA73B941C5DF21200218BD5 /* PFPurchaseTableViewCell.h */,
+				7CA73B951C5DF21200218BD5 /* PFPurchaseTableViewCell.m */,
+				7CA73B961C5DF21200218BD5 /* PFTableViewCell.h */,
+				7CA73B971C5DF21200218BD5 /* PFTableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7CA73B981C5DF21200218BD5 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73B991C5DF21200218BD5 /* Cells */,
+				7CA73B9E1C5DF21200218BD5 /* Extensions */,
+				7CA73BA71C5DF21200218BD5 /* PFImageCache.h */,
+				7CA73BA81C5DF21200218BD5 /* PFImageCache.m */,
+				7CA73BA91C5DF21200218BD5 /* PFLocalization.h */,
+				7CA73BAA1C5DF21200218BD5 /* Views */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		7CA73B991C5DF21200218BD5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73B9A1C5DF21200218BD5 /* PFActivityIndicatorCollectionReusableView.h */,
+				7CA73B9B1C5DF21200218BD5 /* PFActivityIndicatorCollectionReusableView.m */,
+				7CA73B9C1C5DF21200218BD5 /* PFActivityIndicatorTableViewCell.h */,
+				7CA73B9D1C5DF21200218BD5 /* PFActivityIndicatorTableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7CA73B9E1C5DF21200218BD5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73B9F1C5DF21200218BD5 /* PFAlertView.h */,
+				7CA73BA01C5DF21200218BD5 /* PFAlertView.m */,
+				7CA73BA11C5DF21200218BD5 /* PFColor.h */,
+				7CA73BA21C5DF21200218BD5 /* PFColor.m */,
+				7CA73BA31C5DF21200218BD5 /* PFImage.h */,
+				7CA73BA41C5DF21200218BD5 /* PFImage.m */,
+				7CA73BA51C5DF21200218BD5 /* PFRect.h */,
+				7CA73BA61C5DF21200218BD5 /* PFRect.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7CA73BAA1C5DF21200218BD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BAB1C5DF21200218BD5 /* Buttons */,
+				7CA73BB41C5DF21200218BD5 /* PFLoadingView.h */,
+				7CA73BB51C5DF21200218BD5 /* PFLoadingView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7CA73BAB1C5DF21200218BD5 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BAC1C5DF21200218BD5 /* PFActionButton.h */,
+				7CA73BAD1C5DF21200218BD5 /* PFActionButton.m */,
+				7CA73BAE1C5DF21200218BD5 /* PFDismissButton.h */,
+				7CA73BAF1C5DF21200218BD5 /* PFDismissButton.m */,
+				7CA73BB01C5DF21200218BD5 /* PFPrimaryButton.h */,
+				7CA73BB11C5DF21200218BD5 /* PFPrimaryButton.m */,
+				7CA73BB21C5DF21200218BD5 /* PFTextButton.h */,
+				7CA73BB31C5DF21200218BD5 /* PFTextButton.m */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		7CA73BB61C5DF21200218BD5 /* LogInViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BB71C5DF21200218BD5 /* PFLogInView.h */,
+				7CA73BB81C5DF21200218BD5 /* PFLogInView.m */,
+				7CA73BB91C5DF21200218BD5 /* PFLogInViewController.h */,
+				7CA73BBA1C5DF21200218BD5 /* PFLogInViewController.m */,
+			);
+			path = LogInViewController;
+			sourceTree = "<group>";
+		};
+		7CA73BBB1C5DF21200218BD5 /* ProductTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BBC1C5DF21200218BD5 /* PFProductTableViewController.h */,
+				7CA73BBD1C5DF21200218BD5 /* PFProductTableViewController.m */,
+			);
+			path = ProductTableViewController;
+			sourceTree = "<group>";
+		};
+		7CA73BBE1C5DF21200218BD5 /* QueryCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BBF1C5DF21200218BD5 /* PFQueryCollectionViewController.h */,
+				7CA73BC01C5DF21200218BD5 /* PFQueryCollectionViewController.m */,
+			);
+			path = QueryCollectionViewController;
+			sourceTree = "<group>";
+		};
+		7CA73BC11C5DF21200218BD5 /* QueryTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BC21C5DF21200218BD5 /* PFQueryTableViewController.h */,
+				7CA73BC31C5DF21200218BD5 /* PFQueryTableViewController.m */,
+			);
+			path = QueryTableViewController;
+			sourceTree = "<group>";
+		};
+		7CA73BC41C5DF21200218BD5 /* SignUpViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BC51C5DF21200218BD5 /* PFSignUpView.h */,
+				7CA73BC61C5DF21200218BD5 /* PFSignUpView.m */,
+				7CA73BC71C5DF21200218BD5 /* PFSignUpViewController.h */,
+				7CA73BC81C5DF21200218BD5 /* PFSignUpViewController.m */,
+			);
+			path = SignUpViewController;
+			sourceTree = "<group>";
+		};
+		7CA73BC91C5DF21200218BD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BCA1C5DF21200218BD5 /* PFImageView.h */,
+				7CA73BCB1C5DF21200218BD5 /* PFImageView.m */,
+				7CA73BCC1C5DF21200218BD5 /* PFTextField.h */,
+				7CA73BCD1C5DF21200218BD5 /* PFTextField.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7CA73BCE1C5DF21200218BD5 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BCF1C5DF21200218BD5 /* PFResources.h */,
+				7CA73BD01C5DF21200218BD5 /* PFResources.m */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		7CA73BD11C5DF21200218BD5 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BD21C5DF21200218BD5 /* ParseUI.h */,
+				7CA73BD31C5DF21200218BD5 /* ParseUIConstants.h */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		7CA73BD41C5DF21200218BD5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BD51C5DF21200218BD5 /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7CA73BD51C5DF21200218BD5 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BD61C5DF21200218BD5 /* ParseUI.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		7CC399401C6A17C000D87B7F /* Grocery */ = {
+			isa = PBXGroup;
+			children = (
+				7CC399411C6A1BD200D87B7F /* GroceryTableViewController.swift */,
+				7CC399431C6A1BDD00D87B7F /* Grocery.swift */,
+				7CC399521C6A1F2200D87B7F /* CreateGroceryViewController.swift */,
+				7CC399541C6A62CF00D87B7F /* GroceryTableViewCell.swift */,
+			);
+			name = Grocery;
+			sourceTree = "<group>";
+		};
+		7CC399491C6A1C3600D87B7F /* Listing */ = {
+			isa = PBXGroup;
+			children = (
+				7CC3994A1C6A1C4600D87B7F /* Listing.swift */,
+				7CC3994C1C6A1C5400D87B7F /* ListingTableViewController.swift */,
+				7CC3994E1C6A1C6500D87B7F /* ListingTableViewCell.swift */,
+				7CC399501C6A1C8A00D87B7F /* CreateListingTableViewController.swift */,
+			);
+			name = Listing;
+			sourceTree = "<group>";
+		};
+		7CDF981A1C7381730020A6C7 /* Bill */ = {
+			isa = PBXGroup;
+			children = (
+				7CDF981B1C73870F0020A6C7 /* Bill.swift */,
+				7CDF98201C738B2E0020A6C7 /* BillTableViewController.swift */,
+				7CDF98241C738E520020A6C7 /* BillTableViewCell.swift */,
+				7CDF98261C73956C0020A6C7 /* BillParentViewController.swift */,
+				7CF53F1F1C7902C800353F4F /* CreateBillViewController.swift */,
+			);
+			name = Bill;
+			sourceTree = "<group>";
+		};
+		7CDF981D1C7387600020A6C7 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				7CDF981E1C7389FC0020A6C7 /* Payment.swift */,
+			);
+			name = Payment;
+			sourceTree = "<group>";
+		};
+		7CF53F221C79182A00353F4F /* SlideOutMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SlideOutMenu;
+			sourceTree = "<group>";
+		};
+		7CF53F311C79465300353F4F /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7CF53F321C79467700353F4F /* SWRevealViewController.h */,
+				7CF53F331C79467700353F4F /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		7CFEE55E1C5BD8C0000AEEB7 /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				7CFEE55F1C5BD8EB000AEEB7 /* LoginViewController.swift */,
+				7CFEE5611C5BD94D000AEEB7 /* RegisterViewController.swift */,
+				7CFEE5631C5BD996000AEEB7 /* ResetPasswordViewController.swift */,
+			);
+			name = Initial;
+			sourceTree = "<group>";
+		};
+		7CFEE57B1C5D0A59000AEEB7 /* Chore */ = {
+			isa = PBXGroup;
+			children = (
+				7CFEE57C1C5D0B6A000AEEB7 /* Chore.swift */,
+				7CFEE57E1C5D0B86000AEEB7 /* ChoreTableViewController.swift */,
+				7CFEE5801C5D0BA1000AEEB7 /* CreateChoreViewController.swift */,
+				7CFEE5821C5D0BBE000AEEB7 /* ChoreTableViewCell.swift */,
+			);
+			name = Chore;
+			sourceTree = "<group>";
+		};
+		7CFEE58D1C5D830D000AEEB7 /* Household */ = {
+			isa = PBXGroup;
+			children = (
+				7C9C50391C5DCB3E00B3C694 /* HouseholdTableViewController.swift */,
+				7CFEE58E1C5D832B000AEEB7 /* Household.swift */,
+				7CFEE5921C5D8353000AEEB7 /* CreateHouseholdViewController.swift */,
+				7CFEE5941C5D8364000AEEB7 /* HouseholdTableViewCell.swift */,
+				7CFEE5961C5D89A2000AEEB7 /* JoinExistingGroupViewController.swift */,
+			);
+			name = Household;
+			sourceTree = "<group>";
+		};
+		814C3AC51B69877600E307BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				814C3AC81B69877600E307BB /* Images.xcassets */,
+				814C3AC91B69877600E307BB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		81BA813C1A49DA1800E65899 = {
+			isa = PBXGroup;
+			children = (
+				7C1388451C6069CF00862041 /* Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg */,
+				7C1388531C6074B500862041 /* cleaning-lady-room-service-icon-isolated_154306967.jpg */,
+				7C8824431C73262100803A7C /* grocery-bag.jpg */,
+				7C1388431C60529300862041 /* DSC_1133.JPG */,
+				7C1388471C606AB200862041 /* key_img2.png */,
+				7C5B06061C5F307700E137E4 /* DSC_1152.JPG */,
+				7C9C50361C5DCB2600B3C694 /* Households.xcodeproj */,
+				81BA81471A49DA1800E65899 /* Households */,
+				814C3AC51B69877600E307BB /* Resources */,
+				81BA816A1A49DB5600E65899 /* Frameworks */,
+				81BA81461A49DA1800E65899 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81BA81461A49DA1800E65899 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81BA81451A49DA1800E65899 /* Households.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81BA81471A49DA1800E65899 /* Households */ = {
+			isa = PBXGroup;
+			children = (
+				7CF53F311C79465300353F4F /* SWRevealViewController */,
+				7CFEE5881C5D0DE3000AEEB7 /* Households-Bridging-Header.h */,
+				7CF53F221C79182A00353F4F /* SlideOutMenu */,
+				7CDF981D1C7387600020A6C7 /* Payment */,
+				7CDF981A1C7381730020A6C7 /* Bill */,
+				7CC399491C6A1C3600D87B7F /* Listing */,
+				7CC399401C6A17C000D87B7F /* Grocery */,
+				7C13884C1C60743900862041 /* Assignment */,
+				7C5B060A1C5F406D00E137E4 /* Occupy */,
+				7CFEE58D1C5D830D000AEEB7 /* Household */,
+				7CFEE57B1C5D0A59000AEEB7 /* Chore */,
+				7CFEE55E1C5BD8C0000AEEB7 /* Initial */,
+				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
+				7CDF98181C737BD20020A6C7 /* TBC.swift */,
+				814C3AC61B69877600E307BB /* Main.storyboard */,
+				7CF53F1A1C78CC5900353F4F /* LaunchScreen.storyboard */,
+			);
+			name = Households;
+			path = households;
+			sourceTree = "<group>";
+		};
+		81BA816A1A49DB5600E65899 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CA73BD81C5DF3FB00218BD5 /* ParseUI.framework */,
+				7CA73B8F1C5DF21200218BD5 /* ParseUI */,
+				7CFEE5761C5BE06D000AEEB7 /* libsqlite3.tbd */,
+				7CFEE5741C5BE066000AEEB7 /* libz.tbd */,
+				7CFEE5721C5BE056000AEEB7 /* StoreKit.framework */,
+				7CFEE5701C5BE04D000AEEB7 /* Security.framework */,
+				7CFEE56E1C5BE047000AEEB7 /* QuartzCore.framework */,
+				7CFEE56C1C5BE03C000AEEB7 /* CoreLocation.framework */,
+				7CFEE56A1C5BE036000AEEB7 /* CoreGraphics.framework */,
+				7CFEE5681C5BE02D000AEEB7 /* CFNetwork.framework */,
+				81BA816B1A49DB6800E65899 /* Bolts.framework */,
+				81BA816C1A49DB6800E65899 /* Parse.framework */,
+				81BA816E1A49DB6800E65899 /* ParseFacebookUtils.framework */,
+				81BA81801A49E10C00E65899 /* ParseUI.framework */,
+				81BA81751A49E0C500E65899 /* System Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81BA81751A49E0C500E65899 /* System Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */,
+				81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */,
+				81BA81781A49E0DB00E65899 /* AudioToolbox.framework */,
+				81BA81761A49E0D500E65899 /* libsqlite3.dylib */,
+			);
+			name = "System Frameworks";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81BA81441A49DA1800E65899 /* Households */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81BA81641A49DA1800E65899 /* Build configuration list for PBXNativeTarget "Households" */;
+			buildPhases = (
+				81BA81411A49DA1800E65899 /* Sources */,
+				81BA81421A49DA1800E65899 /* Frameworks */,
+				81BA81431A49DA1800E65899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Households;
+			productName = ParseStarterProject;
+			productReference = 81BA81451A49DA1800E65899 /* Households.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81BA813D1A49DA1800E65899 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "";
+				TargetAttributes = {
+					81BA81441A49DA1800E65899 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 8G5A3VM6A3;
+					};
+				};
+			};
+			buildConfigurationList = 81BA81401A49DA1800E65899 /* Build configuration list for PBXProject "Households" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81BA813C1A49DA1800E65899;
+			productRefGroup = 81BA81461A49DA1800E65899 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7C9C50371C5DCB2600B3C694 /* Products */;
+					ProjectRef = 7C9C50361C5DCB2600B3C694 /* Households.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				81BA81441A49DA1800E65899 /* Households */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81BA81431A49DA1800E65899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CF53F1B1C78CC5900353F4F /* LaunchScreen.storyboard in Resources */,
+				7C8824441C73262100803A7C /* grocery-bag.jpg in Resources */,
+				7C1388461C6069CF00862041 /* Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg in Resources */,
+				7C1388441C60529300862041 /* DSC_1133.JPG in Resources */,
+				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
+				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
+				7C1388541C6074B500862041 /* cleaning-lady-room-service-icon-isolated_154306967.jpg in Resources */,
+				7C1388481C606AB200862041 /* key_img2.png in Resources */,
+				7C5B06071C5F307700E137E4 /* DSC_1152.JPG in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81BA81411A49DA1800E65899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CFEE5601C5BD8EB000AEEB7 /* LoginViewController.swift in Sources */,
+				7CFEE5811C5D0BA1000AEEB7 /* CreateChoreViewController.swift in Sources */,
+				7CFEE57F1C5D0B86000AEEB7 /* ChoreTableViewController.swift in Sources */,
+				7CFEE58F1C5D832B000AEEB7 /* Household.swift in Sources */,
+				7CDF981C1C73870F0020A6C7 /* Bill.swift in Sources */,
+				7CC399551C6A62CF00D87B7F /* GroceryTableViewCell.swift in Sources */,
+				7CDF981F1C7389FC0020A6C7 /* Payment.swift in Sources */,
+				7CC3994B1C6A1C4600D87B7F /* Listing.swift in Sources */,
+				7CFEE5931C5D8353000AEEB7 /* CreateHouseholdViewController.swift in Sources */,
+				7CC399531C6A1F2200D87B7F /* CreateGroceryViewController.swift in Sources */,
+				7CFEE5971C5D89A2000AEEB7 /* JoinExistingGroupViewController.swift in Sources */,
+				7CDE1F3A1C610749007E9DC2 /* CreateAssignmentViewController.swift in Sources */,
+				7CC3994F1C6A1C6500D87B7F /* ListingTableViewCell.swift in Sources */,
+				7C9C503A1C5DCB3E00B3C694 /* HouseholdTableViewController.swift in Sources */,
+				7CDF98191C737BD20020A6C7 /* TBC.swift in Sources */,
+				7C1388501C60745400862041 /* Assignment.swift in Sources */,
+				7CC399441C6A1BDD00D87B7F /* Grocery.swift in Sources */,
+				7C5B06101C5F40C400E137E4 /* OccupyTableViewCell.swift in Sources */,
+				7CC3994D1C6A1C5400D87B7F /* ListingTableViewController.swift in Sources */,
+				7CDF98251C738E520020A6C7 /* BillTableViewCell.swift in Sources */,
+				7CFEE5641C5BD996000AEEB7 /* ResetPasswordViewController.swift in Sources */,
+				7C5B060C1C5F409200E137E4 /* OccupyTableViewController.swift in Sources */,
+				7CC399511C6A1C8A00D87B7F /* CreateListingTableViewController.swift in Sources */,
+				7C1388521C60745F00862041 /* AssignmentTableViewCell.swift in Sources */,
+				7CFEE57D1C5D0B6A000AEEB7 /* Chore.swift in Sources */,
+				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
+				7CFEE5621C5BD94D000AEEB7 /* RegisterViewController.swift in Sources */,
+				7CF53F201C7902C800353F4F /* CreateBillViewController.swift in Sources */,
+				7CDF98271C73956C0020A6C7 /* BillParentViewController.swift in Sources */,
+				7CFEE5951C5D8364000AEEB7 /* HouseholdTableViewCell.swift in Sources */,
+				7CDF98211C738B2E0020A6C7 /* BillTableViewController.swift in Sources */,
+				7CFEE5831C5D0BBE000AEEB7 /* ChoreTableViewCell.swift in Sources */,
+				7CF53F341C79467700353F4F /* SWRevealViewController.m in Sources */,
+				7CC399421C6A1BD200D87B7F /* GroceryTableViewController.swift in Sources */,
+				7C13884E1C60744C00862041 /* AssignmentTableViewController.swift in Sources */,
+				7C5B060E1C5F40B500E137E4 /* Occupy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7CA73BD61C5DF21200218BD5 /* ParseUI.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CA73BD71C5DF21200218BD5 /* en */,
+			);
+			name = ParseUI.strings;
+			sourceTree = "<group>";
+		};
+		814C3AC61B69877600E307BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				814C3AC71B69877600E307BB /* Base */,
+			);
+			name = Main.storyboard;
+			path = ../Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81BA81621A49DA1800E65899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
+			};
+			name = Debug;
+		};
+		81BA81631A49DA1800E65899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
+			};
+			name = Release;
+		};
+		81BA81651A49DA1800E65899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Households;
+				SWIFT_OBJC_BRIDGING_HEADER = "households/Households-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
+			};
+			name = Debug;
+		};
+		81BA81661A49DA1800E65899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Households;
+				SWIFT_OBJC_BRIDGING_HEADER = "households/Households-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81BA81401A49DA1800E65899 /* Build configuration list for PBXProject "Households" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81BA81621A49DA1800E65899 /* Debug */,
+				81BA81631A49DA1800E65899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81BA81641A49DA1800E65899 /* Build configuration list for PBXNativeTarget "Households" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81BA81651A49DA1800E65899 /* Debug */,
+				81BA81661A49DA1800E65899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81BA813D1A49DA1800E65899 /* Project object */;
+}
