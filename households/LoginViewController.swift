@@ -18,16 +18,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         print("Inside viewdidload of LoginVC")
-        let object = PFObject(className: "TestObject")
-        object.setObject("John", forKey: "foo")
-        object.saveInBackgroundWithBlock { (succeeded, error) -> Void in
-            if succeeded {
-                print("Object Uploaded")
-            } else {
-                print("Error: \(error) \(error!.userInfo)")
-            }
-        }
+
+
         
         //let imageTheLights: FLAnimatedImage = FLAnimatedImage(animatedGIFData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lights", ofType: "gif")!))
         //self.imageLights.animatedImage = imageTheLights
@@ -65,5 +61,9 @@ class LoginViewController: UIViewController {
                 alert.show()
             }
         })
+    }
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 }

@@ -28,6 +28,8 @@ class RegisterViewController: UIViewController {
         //let imageTheLights: FLAnimatedImage = FLAnimatedImage(animatedGIFData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lights", ofType: "gif")!))
         //self.imageLights.animatedImage = imageTheLights
         //[self.view .addSubview(self.imageLights)]
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func selectPicturePressed(sender: AnyObject) {
@@ -108,6 +110,10 @@ class RegisterViewController: UIViewController {
                 }
             })
         }
+    }
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 }
 

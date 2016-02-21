@@ -106,7 +106,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(Required) User" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zgM-gG-5KS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(Required) Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zgM-gG-5KS">
                                 <rect key="frame" x="20" y="78" width="269" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -352,7 +352,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwb-d1-2YO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3852" y="750"/>
+            <point key="canvasLocation" x="1682" y="738"/>
         </scene>
         <!--My Households-->
         <scene sceneID="Mqb-XZ-veZ">
@@ -473,7 +473,81 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xH-lr-u6r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1682" y="2241"/>
+            <point key="canvasLocation" x="2494" y="2241"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="pwr-2e-Vmg">
+            <objects>
+                <viewController id="FcK-Vy-rNM" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qTm-mU-CeP"/>
+                        <viewControllerLayoutGuide type="bottom" id="sKM-Ev-WId"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RCF-X9-oA3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="sHL-IJ-EHn" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="9R5-Dv-HFH"/>
+                        <segue destination="I78-XA-hEE" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="U0i-yn-G5Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aas-3Q-gzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1270" y="1339"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JHj-up-t26">
+            <objects>
+                <viewController id="I78-XA-hEE" customClass="ViewController" customModule="Households" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8TY-lH-DDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wjk-rD-eJd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W3O-h6-6tk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BFu-yf-132">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="p6n-ic-aQY"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="Open" destination="p6n-ic-aQY" id="sJY-5G-5Vt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Nf-rJ-qgV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-558" y="2027"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="PtL-Ya-QLl">
+            <objects>
+                <tableViewController id="sHL-IJ-EHn" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0gn-m3-OZq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qRq-64-AxI">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qRq-64-AxI" id="euK-9L-zvk">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sHL-IJ-EHn" id="YQN-TS-hDT"/>
+                            <outlet property="delegate" destination="sHL-IJ-EHn" id="eSw-Ft-TxU"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afc-u0-5lz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-558" y="1339"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="KmO-fA-hJQ">
@@ -553,7 +627,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ai2-PZ-PGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2988" y="2241"/>
+            <point key="canvasLocation" x="3800" y="2241"/>
         </scene>
         <!--Create Grocery View Controller-->
         <scene sceneID="9Wm-ZN-APp">
@@ -673,7 +747,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENt-Mv-aWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3642" y="2241"/>
+            <point key="canvasLocation" x="4454" y="2241"/>
         </scene>
         <!--Build New Household-->
         <scene sceneID="4AQ-lZ-umu">
@@ -877,7 +951,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s44-R7-rKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034" y="2241"/>
+            <point key="canvasLocation" x="1846" y="2241"/>
         </scene>
         <!--Listing Table View Controller-->
         <scene sceneID="2wn-UP-m0m">
@@ -889,7 +963,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListingCell" id="lpK-ke-wBN" customClass="ListingTableViewCell" customModule="Households" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lpK-ke-wBN" id="fxs-ds-W08">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -950,7 +1024,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zmt-f7-saT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334" y="2241"/>
+            <point key="canvasLocation" x="3146" y="2241"/>
         </scene>
         <!--Title-->
         <scene sceneID="67h-Sb-PeA">
@@ -1077,6 +1151,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dGi-fv-dtR">
+                        <barButtonItem key="leftBarButtonItem" title="&lt;&lt;" id="Q4j-ri-kng">
+                            <connections>
+                                <segue destination="WaY-xp-Bjo" kind="presentation" id="2Xo-LA-YL2"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nPu-ef-Kfk">
                             <connections>
                                 <segue destination="1Iy-Ma-m37" kind="show" identifier="ToCreateBillSegue" id="bML-lw-1q0"/>
@@ -1246,15 +1325,34 @@
             </objects>
             <point key="canvasLocation" x="1034" y="3593"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y1i-S4-FFo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3eG-nB-3if" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eck-pV-yVl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="I78-XA-hEE" kind="relationship" relationship="rootViewController" id="vFp-fI-ZzW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mGO-H8-cKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1270" y="2027"/>
+        </scene>
     </scenes>
     <resources>
         <image name="DSC_1152.JPG" width="6000" height="4000"/>
         <image name="key_img2.png" width="438" height="326"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b5i-L6-5QQ"/>
         <segue reference="Zab-Bc-87f"/>
-        <segue reference="Cgu-Ju-SzA"/>
-        <segue reference="NtD-iq-bmR"/>
+        <segue reference="qZc-Kx-cCu"/>
+        <segue reference="b5i-L6-5QQ"/>
+        <segue reference="DzQ-tQ-vWE"/>
+        <segue reference="U0i-yn-G5Y"/>
     </inferredMetricsTieBreakers>
 </document>

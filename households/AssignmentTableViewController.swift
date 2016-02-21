@@ -40,12 +40,16 @@ class AssignmentTableViewController: PFQueryTableViewController {
         self.title = "Chores"
         print("self.title = currentOccupancy?.description")
         print(currentOccupancy?.description)
-        
+     
     }
+    
     
     override func viewWillAppear(animated: Bool) {
         print("Class: AssignmentTBC\nviewwillappear()\nloadObjects()")
         //loadObjects()
+        
+        
+
     }
     
     override func queryForTable() -> PFQuery {

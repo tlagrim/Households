@@ -23,6 +23,7 @@ class CreateBillViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         // print(currentOccupancyForNewBill)
+
     }
     
     override func viewWillAppear(animated: Bool) {

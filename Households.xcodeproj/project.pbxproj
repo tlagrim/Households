@@ -14,6 +14,10 @@
 		7C1388501C60745400862041 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C13884F1C60745400862041 /* Assignment.swift */; };
 		7C1388521C60745F00862041 /* AssignmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1388511C60745F00862041 /* AssignmentTableViewCell.swift */; };
 		7C1388541C6074B500862041 /* cleaning-lady-room-service-icon-isolated_154306967.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C1388531C6074B500862041 /* cleaning-lady-room-service-icon-isolated_154306967.jpg */; };
+		7C1998561C7A4B5700402284 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1998551C7A4B5700402284 /* ViewController.swift */; };
+		7C19986D1C7A73CA00402284 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C19986C1C7A73CA00402284 /* SWRevealViewController.m */; };
+		7C2F09A51C7A46E1008EC73A /* Timothy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F09A41C7A46E1008EC73A /* Timothy.swift */; };
+		7C2F09A91C7A4767008EC73A /* Lagrimas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F09A81C7A4767008EC73A /* Lagrimas.swift */; };
 		7C5B06071C5F307700E137E4 /* DSC_1152.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 7C5B06061C5F307700E137E4 /* DSC_1152.JPG */; };
 		7C5B060C1C5F409200E137E4 /* OccupyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B060B1C5F409200E137E4 /* OccupyTableViewController.swift */; };
 		7C5B060E1C5F40B500E137E4 /* Occupy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B060D1C5F40B500E137E4 /* Occupy.swift */; };
@@ -38,7 +42,7 @@
 		7CDF98271C73956C0020A6C7 /* BillParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDF98261C73956C0020A6C7 /* BillParentViewController.swift */; };
 		7CF53F1B1C78CC5900353F4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF53F1A1C78CC5900353F4F /* LaunchScreen.storyboard */; };
 		7CF53F201C7902C800353F4F /* CreateBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF53F1F1C7902C800353F4F /* CreateBillViewController.swift */; };
-		7CF53F341C79467700353F4F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF53F331C79467700353F4F /* SWRevealViewController.m */; };
+		7CF53F381C7A307200353F4F /* BackTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF53F371C7A307200353F4F /* BackTVC.swift */; };
 		7CFEE5601C5BD8EB000AEEB7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE55F1C5BD8EB000AEEB7 /* LoginViewController.swift */; };
 		7CFEE5621C5BD94D000AEEB7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE5611C5BD94D000AEEB7 /* RegisterViewController.swift */; };
 		7CFEE5641C5BD996000AEEB7 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFEE5631C5BD996000AEEB7 /* ResetPasswordViewController.swift */; };
@@ -77,6 +81,12 @@
 		7C13884F1C60745400862041 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		7C1388511C60745F00862041 /* AssignmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewCell.swift; sourceTree = "<group>"; };
 		7C1388531C6074B500862041 /* cleaning-lady-room-service-icon-isolated_154306967.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cleaning-lady-room-service-icon-isolated_154306967.jpg"; sourceTree = "<group>"; };
+		7C1998551C7A4B5700402284 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7C19986A1C7A73C900402284 /* Households-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Households-Bridging-Header.h"; sourceTree = "<group>"; };
+		7C19986B1C7A73CA00402284 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		7C19986C1C7A73CA00402284 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		7C2F09A41C7A46E1008EC73A /* Timothy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timothy.swift; sourceTree = "<group>"; };
+		7C2F09A81C7A4767008EC73A /* Lagrimas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lagrimas.swift; sourceTree = "<group>"; };
 		7C5B06061C5F307700E137E4 /* DSC_1152.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC_1152.JPG; sourceTree = "<group>"; };
 		7C5B060B1C5F409200E137E4 /* OccupyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccupyTableViewController.swift; sourceTree = "<group>"; };
 		7C5B060D1C5F40B500E137E4 /* Occupy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Occupy.swift; sourceTree = "<group>"; };
@@ -156,8 +166,7 @@
 		7CDF98261C73956C0020A6C7 /* BillParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillParentViewController.swift; sourceTree = "<group>"; };
 		7CF53F1A1C78CC5900353F4F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CF53F1F1C7902C800353F4F /* CreateBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBillViewController.swift; sourceTree = "<group>"; };
-		7CF53F321C79467700353F4F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		7CF53F331C79467700353F4F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		7CF53F371C7A307200353F4F /* BackTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTVC.swift; sourceTree = "<group>"; };
 		7CFEE55F1C5BD8EB000AEEB7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7CFEE5611C5BD94D000AEEB7 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7CFEE5631C5BD996000AEEB7 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +182,6 @@
 		7CFEE57E1C5D0B86000AEEB7 /* ChoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoreTableViewController.swift; sourceTree = "<group>"; };
 		7CFEE5801C5D0BA1000AEEB7 /* CreateChoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChoreViewController.swift; sourceTree = "<group>"; };
 		7CFEE5821C5D0BBE000AEEB7 /* ChoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoreTableViewCell.swift; sourceTree = "<group>"; };
-		7CFEE5881C5D0DE3000AEEB7 /* Households-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Households-Bridging-Header.h"; path = "../Households-Bridging-Header.h"; sourceTree = "<group>"; };
 		7CFEE58E1C5D832B000AEEB7 /* Household.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Household.swift; sourceTree = "<group>"; };
 		7CFEE5921C5D8353000AEEB7 /* CreateHouseholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateHouseholdViewController.swift; sourceTree = "<group>"; };
 		7CFEE5941C5D8364000AEEB7 /* HouseholdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseholdTableViewCell.swift; sourceTree = "<group>"; };
@@ -488,6 +496,10 @@
 		7CF53F221C79182A00353F4F /* SlideOutMenu */ = {
 			isa = PBXGroup;
 			children = (
+				7CF53F371C7A307200353F4F /* BackTVC.swift */,
+				7C2F09A41C7A46E1008EC73A /* Timothy.swift */,
+				7C2F09A81C7A4767008EC73A /* Lagrimas.swift */,
+				7C1998551C7A4B5700402284 /* ViewController.swift */,
 			);
 			name = SlideOutMenu;
 			sourceTree = "<group>";
@@ -495,8 +507,6 @@
 		7CF53F311C79465300353F4F /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7CF53F321C79467700353F4F /* SWRevealViewController.h */,
-				7CF53F331C79467700353F4F /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
 			sourceTree = "<group>";
@@ -571,8 +581,9 @@
 		81BA81471A49DA1800E65899 /* Households */ = {
 			isa = PBXGroup;
 			children = (
+				7C19986B1C7A73CA00402284 /* SWRevealViewController.h */,
+				7C19986C1C7A73CA00402284 /* SWRevealViewController.m */,
 				7CF53F311C79465300353F4F /* SWRevealViewController */,
-				7CFEE5881C5D0DE3000AEEB7 /* Households-Bridging-Header.h */,
 				7CF53F221C79182A00353F4F /* SlideOutMenu */,
 				7CDF981D1C7387600020A6C7 /* Payment */,
 				7CDF981A1C7381730020A6C7 /* Bill */,
@@ -587,6 +598,7 @@
 				7CDF98181C737BD20020A6C7 /* TBC.swift */,
 				814C3AC61B69877600E307BB /* Main.storyboard */,
 				7CF53F1A1C78CC5900353F4F /* LaunchScreen.storyboard */,
+				7C19986A1C7A73C900402284 /* Households-Bridging-Header.h */,
 			);
 			name = Households;
 			path = households;
@@ -717,6 +729,7 @@
 				7CC399551C6A62CF00D87B7F /* GroceryTableViewCell.swift in Sources */,
 				7CDF981F1C7389FC0020A6C7 /* Payment.swift in Sources */,
 				7CC3994B1C6A1C4600D87B7F /* Listing.swift in Sources */,
+				7C1998561C7A4B5700402284 /* ViewController.swift in Sources */,
 				7CFEE5931C5D8353000AEEB7 /* CreateHouseholdViewController.swift in Sources */,
 				7CC399531C6A1F2200D87B7F /* CreateGroceryViewController.swift in Sources */,
 				7CFEE5971C5D89A2000AEEB7 /* JoinExistingGroupViewController.swift in Sources */,
@@ -730,18 +743,21 @@
 				7CC3994D1C6A1C5400D87B7F /* ListingTableViewController.swift in Sources */,
 				7CDF98251C738E520020A6C7 /* BillTableViewCell.swift in Sources */,
 				7CFEE5641C5BD996000AEEB7 /* ResetPasswordViewController.swift in Sources */,
+				7C2F09A51C7A46E1008EC73A /* Timothy.swift in Sources */,
 				7C5B060C1C5F409200E137E4 /* OccupyTableViewController.swift in Sources */,
 				7CC399511C6A1C8A00D87B7F /* CreateListingTableViewController.swift in Sources */,
+				7C2F09A91C7A4767008EC73A /* Lagrimas.swift in Sources */,
 				7C1388521C60745F00862041 /* AssignmentTableViewCell.swift in Sources */,
+				7C19986D1C7A73CA00402284 /* SWRevealViewController.m in Sources */,
 				7CFEE57D1C5D0B6A000AEEB7 /* Chore.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
+				7CF53F381C7A307200353F4F /* BackTVC.swift in Sources */,
 				7CFEE5621C5BD94D000AEEB7 /* RegisterViewController.swift in Sources */,
 				7CF53F201C7902C800353F4F /* CreateBillViewController.swift in Sources */,
 				7CDF98271C73956C0020A6C7 /* BillParentViewController.swift in Sources */,
 				7CFEE5951C5D8364000AEEB7 /* HouseholdTableViewCell.swift in Sources */,
 				7CDF98211C738B2E0020A6C7 /* BillTableViewController.swift in Sources */,
 				7CFEE5831C5D0BBE000AEEB7 /* ChoreTableViewCell.swift in Sources */,
-				7CF53F341C79467700353F4F /* SWRevealViewController.m in Sources */,
 				7CC399421C6A1BD200D87B7F /* GroceryTableViewController.swift in Sources */,
 				7C13884E1C60744C00862041 /* AssignmentTableViewController.swift in Sources */,
 				7C5B060E1C5F40B500E137E4 /* Occupy.swift in Sources */,

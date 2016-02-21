@@ -20,7 +20,8 @@ class CreateAssignmentViewController: UIViewController {
     
     override func viewDidLoad() {
         // let thecurrentOccupancyForNewAssignment = currentOccupancyForNewAssignment
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         
     }
     override func viewWillAppear(animated: Bool) {
@@ -110,6 +111,11 @@ class CreateAssignmentViewController: UIViewController {
         let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupanciesOverview")
         self.presentViewController(viewController, animated: true, completion: nil)
         print("Cancel Pressed")
+    }
+
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
 }

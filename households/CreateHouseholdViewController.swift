@@ -25,6 +25,10 @@ class CreateHouseholdViewController: UIViewController {
     
     var username: String?
     
+    override func viewDidLoad() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+    }
     
     override func viewWillAppear(animated: Bool) {
         print("inside createhouseholdVC")
@@ -99,7 +103,10 @@ class CreateHouseholdViewController: UIViewController {
     }
 
     
-    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
 }
 
