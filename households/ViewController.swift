@@ -10,7 +10,10 @@ import Foundation
 class ViewController: UIViewController {
     @IBOutlet var Open: UIBarButtonItem!
     override func viewDidLoad() {
-        Open.target = self.revealViewController()
-        Open.action = Selector("revealToggle:")
+        if self.revealViewController() != nil {
+            Open.target = self.revealViewController()
+            Open.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
 }

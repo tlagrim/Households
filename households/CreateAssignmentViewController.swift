@@ -14,15 +14,26 @@ class CreateAssignmentViewController: UIViewController {
     @IBOutlet weak var choreTitle: UITextField!
     @IBOutlet weak var assignTo: UITextField!
     
+    
     // Occupy Object
     var currentOccupancyForNewAssignment: PFObject?
-    var username: String?
+    // var username: String?
     
     override func viewDidLoad() {
         // let thecurrentOccupancyForNewAssignment = currentOccupancyForNewAssignment
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
-        
+
+        // this block of code grabs the current Occupancy
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                self.currentOccupancyForNewAssignment = objects![0]
+            } else {
+                print("Sorry, couldn't get the Occupancy")
+            }
+        }
     }
     override func viewWillAppear(animated: Bool) {
         print("inside createhouseholdVC")
@@ -37,13 +48,13 @@ class CreateAssignmentViewController: UIViewController {
         // Occupy (occupant, household)
         let currentOccupant = currentOccupancyForNewAssignment?.objectForKey("occupant") as! PFUser
         let currentHousehold = currentOccupancyForNewAssignment?.objectForKey("household") as! PFObject
+        
         print("Current Occupant: ",currentOccupant)
         print("Current Household: ", currentHousehold)
         
         let choreAssignedTo = self.assignTo.text
         let choreTitleToAssign = self.choreTitle.text
         
-        // wtf is this for?
         var theChore = PFObject(className: "Chore")
         var userAssignedTo = PFUser()
         
@@ -78,8 +89,10 @@ class CreateAssignmentViewController: UIViewController {
                             print("Assignment to be saved\n: \(assignment)")
                             print("Created new assignment successfully")
                             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AssignmentsOverview")
-                                self.presentViewController(viewController, animated: true, completion: nil)
+                                //let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AssignmentsOverview")
+                                //self.presentViewController(viewController, animated: true, completion: nil)
+                                self.navigationController?.popViewControllerAnimated(true)
+
                             })
                         } else {
                             if let errorMessage = error?.userInfo["error"] as? String {
@@ -94,6 +107,7 @@ class CreateAssignmentViewController: UIViewController {
             }
         }
     }
+    /*
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "NewAssToAssignmentsOverview"){
@@ -104,7 +118,7 @@ class CreateAssignmentViewController: UIViewController {
             print("CreateAssignmentViewContoller\nPrepare for segue\nObj to be sent:")
             print(obj)
         }
-    }
+    }*/
     
     
     @IBAction func cancelPressed(sender: AnyObject) {

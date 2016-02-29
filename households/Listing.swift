@@ -51,23 +51,19 @@ class Listing: PFObject, PFSubclassing {
         super.init()
     }
     
-    
-    //get tha occupancy 
-    /*
     override class func query() -> PFQuery? {
         
-        let user = PFUser.currentUser()
-        let listing = PFQuery(className: Listing.parseClassName())
-        let query = PFQuery(className: Occupy.parseClassName())
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+        let listingQuery = PFQuery(className: Listing.parseClassName())
         
-        query.whereKey("occupant", equalTo: user!)
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
         
-        listing.includeKey("grocery_item")
-        listing.includeKey("household")
-        listing.includeKey("creator")
-        listing.whereKey("household", matchesKey: "household", inQuery: query)
+        listingQuery.includeKey("grocery_item")
+        listingQuery.includeKey("creator")
+        listingQuery.includeKey("household")
+        // assignmentQuery.whereKey("household", matchesKey: "is_active_occupancy", inQuery: occupancyQuery)
+        listingQuery.whereKey("household", matchesKey: "household", inQuery: occupancyQuery)
         
-        //print("querying in Assignment")
-        return listing
-    }*/
+        return listingQuery
+    }
 }

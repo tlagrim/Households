@@ -59,6 +59,19 @@ class Assignment: PFObject, PFSubclassing {
     //get tha occupancy
     override class func query() -> PFQuery? {
         
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+        let assignmentQuery = PFQuery(className: Assignment.parseClassName())
+        
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        
+        assignmentQuery.includeKey("chore")
+        assignmentQuery.includeKey("household")
+        assignmentQuery.includeKey("assigned_to")
+        assignmentQuery.includeKey("assignment_creator")
+        // assignmentQuery.whereKey("household", matchesKey: "is_active_occupancy", inQuery: occupancyQuery)
+        assignmentQuery.whereKey("household", matchesKey: "household", inQuery: occupancyQuery)
+        
+        /*
         let user = PFUser.currentUser()
         let assignment = PFQuery(className: Assignment.parseClassName())
         let query = PFQuery(className: Occupy.parseClassName())
@@ -70,8 +83,8 @@ class Assignment: PFObject, PFSubclassing {
         assignment.includeKey("assigned_to")
         assignment.includeKey("assignment_creator")
         assignment.whereKey("household", matchesKey: "household", inQuery: query)
-        
+        */
         //print("querying in Assignment")
-        return assignment
+        return assignmentQuery
     }
 }

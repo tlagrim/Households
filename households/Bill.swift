@@ -45,13 +45,22 @@ class Bill: PFObject, PFSubclassing {
     override init() {
         super.init()
     }
-    /*
+    
+    
+    
     override class func query() -> PFQuery? {
-    let bill = PFQuery(className: Bill())
-    bill.includeKey("creator")
-    bill.orderByAscending("updatedAt")
-    return query
-    }*/
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+        let billQuery = PFQuery(className: Bill.parseClassName())
+        
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        
+        billQuery.includeKey("creator")
+        billQuery.includeKey("household")
+        // assignmentQuery.whereKey("household", matchesKey: "is_active_occupancy", inQuery: occupancyQuery)
+        billQuery.whereKey("household", matchesKey: "household", inQuery: occupancyQuery)
+        
+        return billQuery
+    }
     
     
     

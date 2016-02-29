@@ -11,15 +11,23 @@ import Foundation
 class BackTVC: UITableViewController {
     var TableArray = [String]()
     override func viewDidLoad() {
-        TableArray = ["TJ","Timothy","Lagrimas"]
+        TableArray = ["ToOccupanciesCell","ToHousematesCell"]
+        self.tableView.backgroundColor = UIColor.grayColor()
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TableArray.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(TableArray[indexPath.row], forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel?.text = TableArray[indexPath.row]
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier(TableArray[indexPath.row], forIndexPath: indexPath) as UITableViewCell
+        // cell.textLabel?.text = TableArray[indexPath.row]
+        if indexPath.row == 0 {
+            self.tableView.rowHeight = 200
+        } else {
+            self.tableView.rowHeight = 40
+        }
+
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        //cell.contentView.alpha = 0.9
         return cell
     }
     

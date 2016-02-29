@@ -11,6 +11,8 @@ import Foundation
 class Occupy: PFObject, PFSubclassing {
     @NSManaged var occupant: PFUser
     @NSManaged var household: PFObject
+    @NSManaged var is_active_occupancy: Bool
+
     
     // 1. Table view delegate methods here
     class func parseClassName() -> String {
@@ -29,12 +31,12 @@ class Occupy: PFObject, PFSubclassing {
         }
     }
     
-    init(household: PFObject, occupant: PFUser) {
+    init(household: PFObject, occupant: PFUser, is_active_occupancy: Bool) {
         super.init()
         print("Class: Occupy\ninit()\nself...")
         self.household = household
         self.occupant = occupant
-        
+        self.is_active_occupancy = is_active_occupancy
     }
     
     override init() {
@@ -43,7 +45,8 @@ class Occupy: PFObject, PFSubclassing {
     }
     
     
-    //get tha occupancy
+    //get tha occupancy 
+    /*
     override class func query() -> PFQuery? {
         print("override class func query() -> PFQuery?")
         
@@ -72,7 +75,7 @@ class Occupy: PFObject, PFSubclassing {
         
         
         return occupancy
-    }
+    }*/
     
     
     

@@ -32,6 +32,7 @@ class JoinExistingHouseholdViewController: UIViewController {
                 let occupy = PFObject(className: Occupy.parseClassName())
                 occupy["occupant"] = PFUser.currentUser()
                 occupy["household"] = theHousehold
+                occupy["is_active_occupancy"] = false
                 occupy.saveInBackgroundWithBlock{ succeeded, error in
                     if succeeded {
                         print("Created new Occupancy successfully")

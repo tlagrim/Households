@@ -19,10 +19,20 @@ class CreateBillViewController: UIViewController {
     var currentOccupancyForNewBill: PFObject?
     
     override func viewDidLoad() {
-        print("Ajfkdl;")
+        // print("Ajfkdl;")
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         // print(currentOccupancyForNewBill)
+        
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                self.currentOccupancyForNewBill = objects![0]
+            } else {
+                print("Sorry, couldn't get the Occupancy")
+            }
+        }
 
     }
     
@@ -42,9 +52,11 @@ class CreateBillViewController: UIViewController {
         bill.saveInBackgroundWithBlock{ succeeded, error in
             if succeeded {
                 print("Created new bill successfully")
+                // NOT WORKING
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("BillsOverview")
                     self.presentViewController(viewController, animated: true, completion: nil)
+                    // self.navigationController?.popViewControllerAnimated(true)
                 })
             } else {
                 if let errorMessage = error?.userInfo["error"] as? String {
@@ -58,6 +70,7 @@ class CreateBillViewController: UIViewController {
         
     }
     
+    /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "NewBillToBillsOverview"){
             let obj = currentOccupancyForNewBill
@@ -67,15 +80,17 @@ class CreateBillViewController: UIViewController {
             //print("CreateBillViewContoller\nPrepare for segue\nObj to be sent:")
             //print(obj)
         }
-    }
+    }*/
     
     
     @IBAction func cancelPressed(sender: AnyObject) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.navigationController?.popViewControllerAnimated(true)
+            let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupancyDetail")
+            self.presentViewController(viewController, animated: true, completion: nil)
         })
         //print("Cancel Pressed")
     }
+    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)

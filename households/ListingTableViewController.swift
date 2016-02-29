@@ -12,15 +12,22 @@ class ListingTableViewController: PFQueryTableViewController {
     
     // both objects are Occupy objects
     var currentOccupancy: PFObject?
-    var currentOccupancy2: PFObject?
+    // var currentOccupancy2: PFObject?
+    @IBOutlet weak var openMenu: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if self.revealViewController() != nil {
+            openMenu.target = self.revealViewController()
+            openMenu.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
         // NOTE: when currentOccupancy comes in,
         // immediately query for the household and users
         /// maybe this way we'll get the info before I need it.
-        
+        /*
         if currentOccupancy == nil && currentOccupancy2 == nil {
             print("both are nil")
         } else if currentOccupancy == nil && currentOccupancy2 != nil{
@@ -31,9 +38,20 @@ class ListingTableViewController: PFQueryTableViewController {
         } else {
             print("both are not nil")
             currentOccupancy = currentOccupancy2
+        }*/
+        
+        // this block of code grabs the current Occupancy
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                self.currentOccupancy = objects![0]
+            } else {
+                print("Sorry, couldn't get the Occupancy")
+            }
         }
         
-        let household = currentOccupancy?.objectForKey("household")
+        //let household = currentOccupancy?.objectForKey("household")
         //let householdName = household?.valueForKey("household_name")
         
         //self.title = householdName?.description
@@ -50,9 +68,9 @@ class ListingTableViewController: PFQueryTableViewController {
     override func queryForTable() -> PFQuery {
         print("\n\nTJClass: ListingTVC\nfunc queryForTable() PFQ")
         //print("let query = PFQuery(className: Assignment.parseClassName())")
-        // let query = Assignment.query()
-        let query = PFQuery(className: Listing.parseClassName())
-        
+        let query = Listing.query()
+        //let query = PFQuery(className: Listing.parseClassName())
+        /*
         if currentOccupancy == nil && currentOccupancy2 == nil {
             print("both are nil")
         } else if currentOccupancy == nil && currentOccupancy2 != nil{
@@ -63,7 +81,9 @@ class ListingTableViewController: PFQueryTableViewController {
         } else {
             print("both are not nil")
             currentOccupancy = currentOccupancy2
-        }
+        } *//*
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
         
         if let household = currentOccupancy?.objectForKey("household"){
             //print(currentOccupancy)
@@ -84,9 +104,9 @@ class ListingTableViewController: PFQueryTableViewController {
         // QUERY FOR T / F ON IS_PRIVATE
         
         //print("return query")
+        */
         
-        
-        return query
+        return query!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {
@@ -131,7 +151,7 @@ class ListingTableViewController: PFQueryTableViewController {
         }
     }
     
-    
+    /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "WishlistToGrocerySegue"){
             let obj = currentOccupancy
@@ -139,5 +159,5 @@ class ListingTableViewController: PFQueryTableViewController {
             //let householdAssignmentsVC = navVC.topViewController as! CreateListingViewController
             navVC.currentOccupancyForNewListing = obj
         }
-    }
+    }*/
 }

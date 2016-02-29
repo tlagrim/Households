@@ -11,16 +11,22 @@ import Foundation
 class AssignmentTableViewController: PFQueryTableViewController {
     
     // both objects are Occupy objects
-    var currentOccupancy: PFObject?
-    var currentOccupancy2: PFObject?
+    // var currentOccupancy: PFObject?
+    // var currentOccupancy2: PFObject?
+    @IBOutlet var openMenu: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if self.revealViewController() != nil {
+            openMenu.target = self.revealViewController()
+            openMenu.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         
         // NOTE: when currentOccupancy comes in,
         // immediately query for the household and users
         /// maybe this way we'll get the info before I need it.
-        
+        /*
         if currentOccupancy == nil && currentOccupancy2 == nil {
             print("both are nil")
         } else if currentOccupancy == nil && currentOccupancy2 != nil{
@@ -35,11 +41,11 @@ class AssignmentTableViewController: PFQueryTableViewController {
         
         let household = currentOccupancy?.objectForKey("household")
         let householdName = household?.valueForKey("household_name")
-        
+        */
         //self.title = householdName?.description
         self.title = "Chores"
-        print("self.title = currentOccupancy?.description")
-        print(currentOccupancy?.description)
+        // print("self.title = currentOccupancy?.description")
+        // print(currentOccupancy?.description)
      
     }
     
@@ -55,7 +61,8 @@ class AssignmentTableViewController: PFQueryTableViewController {
     override func queryForTable() -> PFQuery {
         print("\n\nClass: AssignmentTVC\nfunc queryForTable() PFQ")
         print("let query = PFQuery(className: Assignment.parseClassName())")
-        // let query = Assignment.query()
+        let query = Assignment.query()
+        /*
         let query = PFQuery(className: Assignment.parseClassName())
         
         if currentOccupancy == nil && currentOccupancy2 == nil {
@@ -85,9 +92,9 @@ class AssignmentTableViewController: PFQueryTableViewController {
         query.includeKey("assignment_creator")
 
         print("return query")
-            
-
-        return query
+            */
+        
+        return query!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {
@@ -129,7 +136,6 @@ class AssignmentTableViewController: PFQueryTableViewController {
     func tableVew(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
-    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             //var selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! AssignmentTableViewCell
@@ -145,6 +151,7 @@ class AssignmentTableViewController: PFQueryTableViewController {
     // object to be sent is an Occupy object
     let obj = self.objects![indexPath!.row]
     */
+    /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "NewAssignmentSegue"){
             let indexPath = self.tableView.indexPathForSelectedRow
@@ -154,5 +161,5 @@ class AssignmentTableViewController: PFQueryTableViewController {
             let householdAssignmentsVC = navVC.topViewController as! CreateAssignmentViewController
             householdAssignmentsVC.currentOccupancyForNewAssignment = obj
         }
-    }
+    }*/
 }

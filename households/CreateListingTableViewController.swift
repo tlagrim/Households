@@ -20,6 +20,17 @@ class CreateListingViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
+        // this block of code grabs the current Occupancy
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                self.currentOccupancyForNewListing = objects![0]
+            } else {
+                print("Sorry, couldn't get the Occupancy")
+            }
+        }
+        
     }
     override func viewWillAppear(animated: Bool) {
         print("inside createListingVC")
@@ -54,8 +65,9 @@ class CreateListingViewController: UIViewController {
                         print("Listing to be saved\n: \(listing)")
                         print("Created new listing successfully")
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupanciesOverview")
-                            self.presentViewController(viewController, animated: true, completion: nil)
+                            //let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupancyDetail")
+                            //self.presentViewController(viewController, animated: true, completion: nil)
+                            self.navigationController?.popViewControllerAnimated(true)
                         })
                     } else {
                         if let errorMessage = error?.userInfo["error"] as? String {
@@ -72,6 +84,7 @@ class CreateListingViewController: UIViewController {
 
     }
     
+    /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "NewListingToListingsOverview"){
             let obj = currentOccupancyForNewListing
@@ -81,13 +94,17 @@ class CreateListingViewController: UIViewController {
             print("CreateAssignmentViewContoller\nPrepare for segue\nObj to be sent:")
             print(obj)
         }
-    }
+    }*/
     
     
     @IBAction func cancelPressed(sender: AnyObject) {
+        /*
         let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupanciesOverview")
         self.presentViewController(viewController, animated: true, completion: nil)
-        print("Cancel Pressed")
+        */
+        //print("Cancel Pressed")
+        self.navigationController?.popViewControllerAnimated(true)
+
     }
     
     func dismissKeyboard() {

@@ -10,18 +10,23 @@ import Foundation
 
 class BillTableViewController: PFQueryTableViewController {
     
+    @IBOutlet weak var openMenu: UIBarButtonItem!
     // both objects are Occupy objects
     var currentOccupancy: PFObject?
-    var currentOccupancy2: PFObject?
+   // var currentOccupancy2: PFObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 30
-        
+        if self.revealViewController() != nil {
+            openMenu.target = self.revealViewController()
+            openMenu.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         // NOTE: when currentOccupancy comes in,
         // immediately query for the household and users
         /// maybe this way we'll get the info before I need it.
-        
+        /*
         if currentOccupancy == nil && currentOccupancy2 == nil {
             print("both are nil")
         } else if currentOccupancy == nil && currentOccupancy2 != nil{
@@ -32,10 +37,20 @@ class BillTableViewController: PFQueryTableViewController {
         } else {
             print("both are not nil")
             currentOccupancy = currentOccupancy2
+        } */
+        // this block of code grabs the current Occupancy
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                self.currentOccupancy = objects![0]
+            } else {
+                print("Sorry, couldn't get the Occupancy")
+            }
         }
         
-        let household = currentOccupancy?.objectForKey("household")
-        let householdName = household?.valueForKey("household_name")
+        // let household = currentOccupancy?.objectForKey("household")
+        // let householdName = household?.valueForKey("household_name")
         
         //self.title = householdName?.description
         self.title = "Bills"
@@ -51,8 +66,9 @@ class BillTableViewController: PFQueryTableViewController {
     override func queryForTable() -> PFQuery {
         print("\n\nTJbilszClass: BillTVC\nfunc queryForTable() PFQ")
         
-        let query = PFQuery(className: Bill.parseClassName())
+        let query = Bill.query()
         
+        /*
         if currentOccupancy == nil && currentOccupancy2 == nil {
             print("both are nil")
         } else if currentOccupancy == nil && currentOccupancy2 != nil{
@@ -63,8 +79,8 @@ class BillTableViewController: PFQueryTableViewController {
         } else {
             print("both are not nil")
             currentOccupancy = currentOccupancy2
-        }
-        
+        }*/
+        /*
         if let household = currentOccupancy?.objectForKey("household"){
             //print(currentOccupancy)
             //print(household)
@@ -79,7 +95,8 @@ class BillTableViewController: PFQueryTableViewController {
         query.includeKey("household")
         query.includeKey("creator")
 
-        return query
+        */
+        return query!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {
@@ -116,7 +133,7 @@ class BillTableViewController: PFQueryTableViewController {
         }
     }
     
-    
+    /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "ToCreateBillSegue"){
             let obj = currentOccupancy
@@ -124,5 +141,5 @@ class BillTableViewController: PFQueryTableViewController {
             //let householdAssignmentsVC = navVC.topViewController as! CreateListingViewController
             navVC.currentOccupancyForNewBill = obj
         }
-    }
+    }*/
 }

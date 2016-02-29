@@ -16,6 +16,7 @@
 		7C1388541C6074B500862041 /* cleaning-lady-room-service-icon-isolated_154306967.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C1388531C6074B500862041 /* cleaning-lady-room-service-icon-isolated_154306967.jpg */; };
 		7C1998561C7A4B5700402284 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1998551C7A4B5700402284 /* ViewController.swift */; };
 		7C19986D1C7A73CA00402284 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C19986C1C7A73CA00402284 /* SWRevealViewController.m */; };
+		7C19986F1C7A822100402284 /* BackOccupyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19986E1C7A822100402284 /* BackOccupyTableViewCell.swift */; };
 		7C2F09A51C7A46E1008EC73A /* Timothy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F09A41C7A46E1008EC73A /* Timothy.swift */; };
 		7C2F09A91C7A4767008EC73A /* Lagrimas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F09A81C7A4767008EC73A /* Lagrimas.swift */; };
 		7C5B06071C5F307700E137E4 /* DSC_1152.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 7C5B06061C5F307700E137E4 /* DSC_1152.JPG */; };
@@ -85,6 +86,7 @@
 		7C19986A1C7A73C900402284 /* Households-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Households-Bridging-Header.h"; sourceTree = "<group>"; };
 		7C19986B1C7A73CA00402284 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		7C19986C1C7A73CA00402284 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		7C19986E1C7A822100402284 /* BackOccupyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackOccupyTableViewCell.swift; sourceTree = "<group>"; };
 		7C2F09A41C7A46E1008EC73A /* Timothy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timothy.swift; sourceTree = "<group>"; };
 		7C2F09A81C7A4767008EC73A /* Lagrimas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lagrimas.swift; sourceTree = "<group>"; };
 		7C5B06061C5F307700E137E4 /* DSC_1152.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC_1152.JPG; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		7C5B060A1C5F406D00E137E4 /* Occupy */ = {
 			isa = PBXGroup;
 			children = (
+				7CFEE5961C5D89A2000AEEB7 /* JoinExistingGroupViewController.swift */,
 				7C5B060B1C5F409200E137E4 /* OccupyTableViewController.swift */,
 				7C5B060D1C5F40B500E137E4 /* Occupy.swift */,
 				7C5B060F1C5F40C400E137E4 /* OccupyTableViewCell.swift */,
@@ -500,6 +503,7 @@
 				7C2F09A41C7A46E1008EC73A /* Timothy.swift */,
 				7C2F09A81C7A4767008EC73A /* Lagrimas.swift */,
 				7C1998551C7A4B5700402284 /* ViewController.swift */,
+				7C19986E1C7A822100402284 /* BackOccupyTableViewCell.swift */,
 			);
 			name = SlideOutMenu;
 			sourceTree = "<group>";
@@ -507,6 +511,8 @@
 		7CF53F311C79465300353F4F /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7C19986B1C7A73CA00402284 /* SWRevealViewController.h */,
+				7C19986C1C7A73CA00402284 /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
 			sourceTree = "<group>";
@@ -539,7 +545,6 @@
 				7CFEE58E1C5D832B000AEEB7 /* Household.swift */,
 				7CFEE5921C5D8353000AEEB7 /* CreateHouseholdViewController.swift */,
 				7CFEE5941C5D8364000AEEB7 /* HouseholdTableViewCell.swift */,
-				7CFEE5961C5D89A2000AEEB7 /* JoinExistingGroupViewController.swift */,
 			);
 			name = Household;
 			sourceTree = "<group>";
@@ -581,8 +586,6 @@
 		81BA81471A49DA1800E65899 /* Households */ = {
 			isa = PBXGroup;
 			children = (
-				7C19986B1C7A73CA00402284 /* SWRevealViewController.h */,
-				7C19986C1C7A73CA00402284 /* SWRevealViewController.m */,
 				7CF53F311C79465300353F4F /* SWRevealViewController */,
 				7CF53F221C79182A00353F4F /* SlideOutMenu */,
 				7CDF981D1C7387600020A6C7 /* Payment */,
@@ -760,6 +763,7 @@
 				7CFEE5831C5D0BBE000AEEB7 /* ChoreTableViewCell.swift in Sources */,
 				7CC399421C6A1BD200D87B7F /* GroceryTableViewController.swift in Sources */,
 				7C13884E1C60744C00862041 /* AssignmentTableViewController.swift in Sources */,
+				7C19986F1C7A822100402284 /* BackOccupyTableViewCell.swift in Sources */,
 				7C5B060E1C5F40B500E137E4 /* Occupy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
