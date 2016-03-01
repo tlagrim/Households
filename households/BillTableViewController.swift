@@ -10,6 +10,9 @@ import Foundation
 
 class BillTableViewController: PFQueryTableViewController {
     
+    // must initialize this so that the parent controller has access
+    weak var theParentVC: BillViewController?
+
     @IBOutlet weak var openMenu: UIBarButtonItem!
     // both objects are Occupy objects
     var currentOccupancy: PFObject?
@@ -131,6 +134,14 @@ class BillTableViewController: PFQueryTableViewController {
             obj.deleteInBackground()
             tableView.reloadData()
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let theBillObj = self.objects![indexPath.row]
+        let theBillAmount = theBillObj.valueForKey("total_amount")
+        let theBillName = theBillObj.valueForKey("desc")
+        theParentVC!.amtBillPressedLabel.text = theBillAmount?.description
+        theParentVC!.nameBillPressedLabel.text = theBillName?.description
     }
     
     /*

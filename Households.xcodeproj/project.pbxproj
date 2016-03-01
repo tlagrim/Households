@@ -24,6 +24,7 @@
 		7C5B060E1C5F40B500E137E4 /* Occupy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B060D1C5F40B500E137E4 /* Occupy.swift */; };
 		7C5B06101C5F40C400E137E4 /* OccupyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B060F1C5F40C400E137E4 /* OccupyTableViewCell.swift */; };
 		7C8824441C73262100803A7C /* grocery-bag.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C8824431C73262100803A7C /* grocery-bag.jpg */; };
+		7C9BF6951C854B1700EB669F /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BF6941C854B1700EB669F /* BillViewController.swift */; };
 		7C9C503A1C5DCB3E00B3C694 /* HouseholdTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C50391C5DCB3E00B3C694 /* HouseholdTableViewController.swift */; };
 		7CA73BD91C5DF3FB00218BD5 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA73BD81C5DF3FB00218BD5 /* ParseUI.framework */; };
 		7CC399421C6A1BD200D87B7F /* GroceryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC399411C6A1BD200D87B7F /* GroceryTableViewController.swift */; };
@@ -94,6 +95,7 @@
 		7C5B060D1C5F40B500E137E4 /* Occupy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Occupy.swift; sourceTree = "<group>"; };
 		7C5B060F1C5F40C400E137E4 /* OccupyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccupyTableViewCell.swift; sourceTree = "<group>"; };
 		7C8824431C73262100803A7C /* grocery-bag.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grocery-bag.jpg"; sourceTree = "<group>"; };
+		7C9BF6941C854B1700EB669F /* BillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		7C9C50361C5DCB2600B3C694 /* Households.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Households.xcodeproj; sourceTree = "<group>"; };
 		7C9C50391C5DCB3E00B3C694 /* HouseholdTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseholdTableViewController.swift; sourceTree = "<group>"; };
 		7CA73B921C5DF21200218BD5 /* PFCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFCollectionViewCell.h; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 				7CDF98241C738E520020A6C7 /* BillTableViewCell.swift */,
 				7CDF98261C73956C0020A6C7 /* BillParentViewController.swift */,
 				7CF53F1F1C7902C800353F4F /* CreateBillViewController.swift */,
+				7C9BF6941C854B1700EB669F /* BillViewController.swift */,
 			);
 			name = Bill;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				7C1388521C60745F00862041 /* AssignmentTableViewCell.swift in Sources */,
 				7C19986D1C7A73CA00402284 /* SWRevealViewController.m in Sources */,
 				7CFEE57D1C5D0B6A000AEEB7 /* Chore.swift in Sources */,
+				7C9BF6951C854B1700EB669F /* BillViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 				7CF53F381C7A307200353F4F /* BackTVC.swift in Sources */,
 				7CFEE5621C5BD94D000AEEB7 /* RegisterViewController.swift in Sources */,
