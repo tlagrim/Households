@@ -38,12 +38,17 @@ class CreateChoreViewController: UIViewController {
     
     @IBAction func createPressed(sender: AnyObject) {
         choreTitle.resignFirstResponder()
+        var pictureData: NSData
         
-        let pictureData = UIImagePNGRepresentation(choreImage.image!)
+        if (choreImage.image != nil){
+            pictureData = UIImagePNGRepresentation(choreImage.image!)!
+        } else {
+            pictureData = UIImagePNGRepresentation(UIImage(named: "chore.jpg")!)!
+        }
         
         //Upload a new picture
         //1
-        let file = PFFile(name: "chore_image", data: pictureData!)
+        let file = PFFile(name: "chore_image", data: pictureData)
         
         //TRYING TO FIND A WAY FOR IMAGE SIZE CHECKER
         file!.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
@@ -54,7 +59,7 @@ class CreateChoreViewController: UIViewController {
                 //3
                 print("there is an error while saveInBackgroundWithBlock",error)
             }
-            })
+        })
         
     }
     
@@ -70,8 +75,8 @@ class CreateChoreViewController: UIViewController {
                 //3
                 print("Created new household successfully")/*
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HouseholdsOverview")
-                    self.presentViewController(viewController, animated: true, completion: nil)
+                let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HouseholdsOverview")
+                self.presentViewController(viewController, animated: true, completion: nil)
                 }) */
                 self.navigationController?.popViewControllerAnimated(true)
             } else {

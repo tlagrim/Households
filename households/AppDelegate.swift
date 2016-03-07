@@ -31,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Grocery.registerSubclass()
         Listing.registerSubclass()
         Chore.registerSubclass()
+        Payment.registerSubclass()
+        Bill.registerSubclass()
+
         
         // Enable storing and querying data from Local Datastore.
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.

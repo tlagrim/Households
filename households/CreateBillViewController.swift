@@ -14,7 +14,7 @@ class CreateBillViewController: UIViewController {
     @IBOutlet weak var billDescription: UITextField!
     @IBOutlet weak var billAmount: UITextField!
     @IBOutlet weak var billDueDate: UIDatePicker!
-    
+    var billToSend: Bill?
     // Occupy Object
     var currentOccupancyForNewBill: PFObject?
     
@@ -45,17 +45,28 @@ class CreateBillViewController: UIViewController {
         let currentHousehold = currentOccupancyForNewBill?.objectForKey("household") as! PFObject
         let billCreator = PFUser.currentUser()
         let theAmount = self.billAmount.text
-        let finalRemainingAmount: Int = Int(theAmount!)!
+        let finalRemainingAmount: Double = Double(theAmount!)!
         
         
         let bill = Bill(creator: billCreator!, household: currentHousehold, is_complete: false, desc: theDesc!, total_amount: finalRemainingAmount, date_due: billDueDate.date, remaining_amount: finalRemainingAmount)
-        bill.saveInBackgroundWithBlock{ succeeded, error in
+        do {
+            try bill.save()
+            self.billToSend = bill
+
+        } catch {
+            print(error)
+        }
+        
+            /*
+            { succeeded, error in
             if succeeded {
+                self.billToSend = bill
                 print("Created new bill successfully")
-                // NOT WORKING
+                //print("Bill created: ", bill)
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("BillsOverview")
-                    self.presentViewController(viewController, animated: true, completion: nil)
+                    
+                    //let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("BillsOverview")
+                    //self.presentViewController(viewController, animated: true, completion: nil)
                     // self.navigationController?.popViewControllerAnimated(true)
                 })
             } else {
@@ -63,24 +74,27 @@ class CreateBillViewController: UIViewController {
                     print("Error!",errorMessage)
                 }
             }
-        }
+        } */
         
         
         
         
     }
     
-    /*
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "NewBillToBillsOverview"){
-            let obj = currentOccupancyForNewBill
-            let navVC = segue.destinationViewController as! UINavigationController
-            let householdAssignmentsVC = navVC.topViewController as! BillTableViewController
-            householdAssignmentsVC.currentOccupancy2 = obj
+        if(segue.identifier == "BillToPaymentsSegue"){
+            let obj = self.billToSend
+            print(obj)
+            
+            let VC = segue.destinationViewController as! CreatePaymentViewController
+            // let createPaymentVC = navVC. as! CreatePaymentViewController
+            VC.theIncomingBill = obj
+          //   householdAssignmentsVC.currentOccupancy2 = obj
             //print("CreateBillViewContoller\nPrepare for segue\nObj to be sent:")
             //print(obj)
         }
-    }*/
+    }
     
     
     @IBAction func cancelPressed(sender: AnyObject) {

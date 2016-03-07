@@ -13,9 +13,11 @@ class Payment: PFObject, PFSubclassing {
     @NSManaged var bill: PFObject
     @NSManaged var contributor: PFUser
     @NSManaged var household: PFObject
-
-    // @NSManaged var logo: PFFile
-    
+    @NSManaged var is_complete: Bool
+    @NSManaged var is_repeat: Bool
+    @NSManaged var is_private: Bool
+    @NSManaged var amount: Double
+    @NSManaged var percentage: Double
     
     class func parseClassName() -> String {
         return "Payment" // set the name of the clss as seen in the database
@@ -28,11 +30,16 @@ class Payment: PFObject, PFSubclassing {
         }
     }
     
-    init(bill: PFObject, contributor: PFUser, household: PFObject) {
+    init(bill: PFObject, contributor: PFUser, household: PFObject, is_complete: Bool, is_repeat: Bool, is_private: Bool, amount: Double, percentage: Double) {
         super.init()
         self.bill = bill
         self.contributor = contributor
         self.household = household
+        self.is_complete = is_complete
+        self.is_repeat = is_repeat
+        self.is_private = is_private
+        self.amount = amount
+        self.percentage = percentage
     }
     
     override init() {
