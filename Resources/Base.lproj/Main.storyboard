@@ -1535,8 +1535,8 @@
         <image name="key_img2.png" width="438" height="326"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TrK-2R-McY"/>
         <segue reference="Zab-Bc-87f"/>
-        <segue reference="GUE-8i-Pdj"/>
+        <segue reference="rLy-Zw-qEH"/>
+        <segue reference="TrK-2R-McY"/>
     </inferredMetricsTieBreakers>
 </document>

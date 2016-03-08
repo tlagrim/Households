@@ -24,37 +24,59 @@ class JoinExistingHouseholdViewController: UIViewController {
         
     }
     
+    func isExistingHousehold() -> Bool {
+        var htem: Household?
+        for i in existingHouseholds{ print("i:",i)
+            htem = (i as! Household)
+            print("key: ",htem!.key)
+            
+            
+            if htem!.key == self.keyInput.text {
+                return true
+            }
+            
+            
+            
+        }
+        return false
+}
+    
     @IBAction func joinPressed(sender: AnyObject) {
-        let keyString = self.keyInput.text
-        var theHousehold = Household() as PFObject
-        let hquery = PFQuery(className: Household.parseClassName())
-        hquery.whereKey("key", equalTo: keyString!)
-        
-        hquery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            if error == nil {
-                theHousehold = objects![0]
-                let occupy = PFObject(className: Occupy.parseClassName())
-                occupy["occupant"] = PFUser.currentUser()
-                occupy["household"] = theHousehold
-                occupy["is_active_occupancy"] = false
-                occupy.saveInBackgroundWithBlock{ succeeded, error in
-                    if succeeded {
-                        print("Created new Occupancy successfully")
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MyOccupancies")
-                            self.presentViewController(viewController, animated: true, completion: nil)
-                        })
-                    } else {
-                        if let errorMessage = error?.userInfo["error"] as? String {
-                            print("Error!",errorMessage)
+        if self.keyInput.text != "" {
+            if isExistingHousehold() {
+                let keyString = self.keyInput.text
+                var theHousehold = Household() as PFObject
+                let hquery = PFQuery(className: Household.parseClassName())
+                hquery.whereKey("key", equalTo: keyString!)
+                
+                hquery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+                    if error == nil {
+                        theHousehold = objects![0]
+                        let occupy = PFObject(className: Occupy.parseClassName())
+                        occupy["occupant"] = PFUser.currentUser()
+                        occupy["household"] = theHousehold
+                        occupy["is_active_occupancy"] = false
+                        occupy.saveInBackgroundWithBlock{ succeeded, error in
+                            if succeeded {
+                                print("Created new Occupancy successfully")
+                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                    let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MyOccupancies")
+                                    self.presentViewController(viewController, animated: true, completion: nil)
+                                })
+                            } else {
+                                if let errorMessage = error?.userInfo["error"] as? String {
+                                    print("Error!",errorMessage)
+                                }
+                            }
                         }
+                    } else {
+                        print("Sorry, couldn't get the household")
                     }
                 }
-                
-                
-                
             } else {
-                print("Sorry, couldn't get the household")
+                let alert = UIAlertController(title: "Household is nonexistent", message:"The household \'\(self.keyInput.text!)\' does not match and our records. Try again.", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: .Default) { _ in })
+                self.presentViewController(alert, animated: true){}
             }
         }
     }
