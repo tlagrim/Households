@@ -38,48 +38,67 @@ class CreateGroceryViewController: UIViewController {
         //TRYING TO FIND A WAY FOR IMAGE SIZE CHECKER
     }
     
-    
+    func isEmptyField() -> Bool {
+        // print(self.groceryTitle.text)
+        if self.groceryItemName.text == "" || self.groceryItemName.text == nil {
+            // print("ChoreTitle field is empty")
+            let alert = UIAlertController(title: "Empty field!", message:"You must fill in the Grocery Item Name. Try again.", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .Default) { _ in })
+            self.presentViewController(alert, animated: true){}
+            return true
+        } else {
+            print("They are okay")
+            return false
+        }
+    }
     
     @IBAction func createPressed(sender: AnyObject) {
-        
-        groceryItemName.resignFirstResponder()
-        price.resignFirstResponder()
-        let thePrice = self.price.text
-        
-        let finalPrice: Int = Int(thePrice!)!
-        
-        //Disable the send button until we are ready
-        navigationItem.rightBarButtonItem?.enabled = false
-        
-        loadingSpinner.startAnimating()
-        
-        let pictureData = UIImagePNGRepresentation(groceryImage.image!)
-        // print("Original Photo works")
-        
-        
-        //Upload a new picture
-        //1
-        let file = PFFile(name: "household_image", data: pictureData!)
-        
-        //TRYING TO FIND A WAY FOR IMAGE SIZE CHECKER
-        file!.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
-            if succeeded {
-                //2
-                self.saveNewGroceryEntry(file!, finalPrice: finalPrice)
-            } else if let error = error {
-                //3
-                print("there is an error while saveInBackgroundWithBlock",error)
+        if isEmptyField() == false {
+            groceryItemName.resignFirstResponder()
+            price.resignFirstResponder()
+            var thePrice = self.price.text
+            if thePrice == "" || thePrice == nil { thePrice = String(0.0) }
+            
+            let finalPrice: Double = Double(thePrice!)!
+            
+            //Disable the send button until we are ready
+            navigationItem.rightBarButtonItem?.enabled = false
+            
+            loadingSpinner.startAnimating()
+            
+            
+            var pictureData: NSData
+            
+            if (groceryImage.image != nil){
+                pictureData = UIImagePNGRepresentation(groceryImage.image!)!
+            } else {
+                pictureData = UIImagePNGRepresentation(UIImage(named: "grocerybag.jpg")!)!
             }
-            }, progressBlock: { percent in
-                //4
-                print("Uploaded: \(percent)%")
-        })
-        
+            
+            //Upload a new picture
+            //1
+            let file = PFFile(name: "image", data: pictureData)
+            
+            
+            //TRYING TO FIND A WAY FOR IMAGE SIZE CHECKER
+            file!.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
+                if succeeded {
+                    //2
+                    self.saveNewGroceryEntry(file!, finalPrice: finalPrice)
+                } else if let error = error {
+                    //3
+                    print("there is an error while saveInBackgroundWithBlock",error)
+                }
+                }, progressBlock: { percent in
+                    //4
+                    print("Uploaded: \(percent)%")
+            })
+        }
         
     }
     
     
-    func saveNewGroceryEntry(file: PFFile, finalPrice: Int)
+    func saveNewGroceryEntry(file: PFFile, finalPrice: Double)
     {
         //1
         // TAKE NOTE OF NUMOCCUPANTS

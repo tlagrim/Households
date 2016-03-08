@@ -12,7 +12,7 @@ import UIKit
 class Grocery: PFObject, PFSubclassing {
     @NSManaged var creator: PFUser
     @NSManaged var name: String?
-    @NSManaged var price: Int
+    @NSManaged var price: Double
     @NSManaged var brand_name: String?
     @NSManaged var store: String?
     @NSManaged var detail: String?
@@ -30,7 +30,7 @@ class Grocery: PFObject, PFSubclassing {
         }
     }
     
-    init(creator: PFUser, name: String?, price: Int, brand_name: String?, store: String?, detail: String?, image: PFFile) {
+    init(creator: PFUser, name: String?, price: Double, brand_name: String?, store: String?, detail: String?, image: PFFile) {
         super.init()
         self.creator = creator
         self.name = name

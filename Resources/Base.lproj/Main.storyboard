@@ -565,7 +565,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="KmO-fA-hJQ">
             <objects>
-                <tabBarController id="ex8-1T-aXa" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" id="ex8-1T-aXa" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="WXH-Bo-00A"/>
                     <value key="contentSizeForViewInPopover" type="size" width="600" height="601"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="78k-Vk-z1b">
@@ -616,7 +616,6 @@
                                 <state key="normal" title="Assign Chore"/>
                                 <connections>
                                     <action selector="newAssignmentPressed:" destination="h2M-R6-mXp" eventType="touchUpInside" id="0wA-PB-Vxc"/>
-                                    <segue destination="neD-Rz-cCn" kind="show" identifier="NewAssToAssignmentsOverview" id="Q9s-RW-CX2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -655,28 +654,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Grocery Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ws2-NG-TqH">
-                                <rect key="frame" x="20" y="89" width="181" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(Required) Grocery Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ws2-NG-TqH">
+                                <rect key="frame" x="20" y="89" width="242" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54N-BG-hrv">
-                                <rect key="frame" x="20" y="127" width="181" height="30"/>
+                                <rect key="frame" x="20" y="127" width="242" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brand Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XiS-wY-ObP">
-                                <rect key="frame" x="20" y="165" width="181" height="30"/>
+                                <rect key="frame" x="20" y="165" width="242" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Store Available" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uW7-7B-Was">
-                                <rect key="frame" x="20" y="203" width="181" height="30"/>
+                                <rect key="frame" x="20" y="203" width="242" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Detail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dwc-FM-hhb">
-                                <rect key="frame" x="20" y="241" width="181" height="30"/>
+                                <rect key="frame" x="20" y="241" width="242" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1533,8 +1532,7 @@
         <image name="key_img2.png" width="438" height="326"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zab-Bc-87f"/>
         <segue reference="rLy-Zw-qEH"/>
-        <segue reference="b5i-L6-5QQ"/>
+        <segue reference="TrK-2R-McY"/>
     </inferredMetricsTieBreakers>
 </document>

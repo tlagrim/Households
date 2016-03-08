@@ -69,46 +69,8 @@ class ListingTableViewController: PFQueryTableViewController {
     }
     
     override func queryForTable() -> PFQuery {
-        print("\n\nTJClass: ListingTVC\nfunc queryForTable() PFQ")
-        //print("let query = PFQuery(className: Assignment.parseClassName())")
+        //print("\n\nTJClass: ListingTVC\nfunc queryForTable() PFQ")
         let query = Listing.query()
-        //let query = PFQuery(className: Listing.parseClassName())
-        /*
-        if currentOccupancy == nil && currentOccupancy2 == nil {
-            print("both are nil")
-        } else if currentOccupancy == nil && currentOccupancy2 != nil{
-            print ("1st is nil, 2nd is not nil")
-            currentOccupancy = currentOccupancy2
-        } else if currentOccupancy != nil && currentOccupancy2 == nil {
-            print ("2nd is nil, 1st is not nil")
-        } else {
-            print("both are not nil")
-            currentOccupancy = currentOccupancy2
-        } *//*
-        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
-        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
-        
-        if let household = currentOccupancy?.objectForKey("household"){
-            //print(currentOccupancy)
-            //print(household)
-            
-            query.whereKey("household", equalTo: household)
-            
-        } else {
-            print("Heyo")
-        }
-        
-        query.includeKey("grocery_item")
-        query.includeKey("household")
-        query.includeKey("creator")
-        if let user = PFUser.currentUser() {
-            query.whereKey("creator", equalTo: user)
-        }
-        // QUERY FOR T / F ON IS_PRIVATE
-        
-        //print("return query")
-        */
-        
         return query!
     }
     
@@ -133,7 +95,7 @@ class ListingTableViewController: PFQueryTableViewController {
         }
         
         if let groceryTitle = listingGrocery.valueForKey("name") {
-            cell.listingName.text = groceryTitle as! String
+            cell.listingName.text = (groceryTitle as! String)
         } else {
             print("No listing Title")
         }

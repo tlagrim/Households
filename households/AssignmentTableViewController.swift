@@ -62,53 +62,17 @@ class AssignmentTableViewController: PFQueryTableViewController {
         print("\n\nClass: AssignmentTVC\nfunc queryForTable() PFQ")
         print("let query = PFQuery(className: Assignment.parseClassName())")
         let query = Assignment.query()
-        /*
-        let query = PFQuery(className: Assignment.parseClassName())
-        
-        if currentOccupancy == nil && currentOccupancy2 == nil {
-            print("both are nil")            
-        } else if currentOccupancy == nil && currentOccupancy2 != nil{
-            print ("1st is nil, 2nd is not nil")
-            currentOccupancy = currentOccupancy2
-        } else if currentOccupancy != nil && currentOccupancy2 == nil {
-            print ("2nd is nil, 1st is not nil")
-        } else {
-            print("both are not nil")
-            currentOccupancy = currentOccupancy2
-        }
-        
-        if let household = currentOccupancy?.objectForKey("household"){
-        print(currentOccupancy)
-        print(household)
-        
-        query.whereKey("household", equalTo: (household))
-        } else {
-            print("Heyo")
-        }
-        
-        query.includeKey("chore")
-        query.includeKey("household")
-        query.includeKey("assigned_to")
-        query.includeKey("assignment_creator")
 
-        print("return query")
-            */
-        
         return query!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {
-        // 1
-        print("\nClass: AssignmentTVC\nfunc tableView\n...\nret cell")
+
         let cell = tableView.dequeueReusableCellWithIdentifier("AssignmentCell", forIndexPath: indexPath) as! AssignmentTableViewCell
         
-        // 2
         let assignment = object as! Assignment
         let assignmentChore = assignment.chore 
-        let assignmentHousehold = assignment.household 
         let assignedTo = assignment.assigned_to
-        let assignmentCreator = assignment.assignment_creator
-        
         
         if let theFile = assignmentChore.valueForKey("chore_image") as? PFFile {
             //if let theFile = occupancy.household.valueForKey("household_image")?.file {

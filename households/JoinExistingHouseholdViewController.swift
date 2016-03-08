@@ -39,7 +39,7 @@ class JoinExistingHouseholdViewController: UIViewController {
             
         }
         return false
-}
+    }
     
     @IBAction func joinPressed(sender: AnyObject) {
         if self.keyInput.text != "" {
@@ -78,6 +78,10 @@ class JoinExistingHouseholdViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Okay", style: .Default) { _ in })
                 self.presentViewController(alert, animated: true){}
             }
+        } else {
+            let alert2 = UIAlertController(title: "Empty field!", message:"You must fill in both fields. Try again.", preferredStyle: .Alert)
+            alert2.addAction(UIAlertAction(title: "Okay", style: .Default) { _ in })
+            self.presentViewController(alert2, animated: true){}
         }
     }
     

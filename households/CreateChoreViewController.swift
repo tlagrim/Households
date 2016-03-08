@@ -34,33 +34,46 @@ class CreateChoreViewController: UIViewController {
         //TRYING TO FIND A WAY FOR IMAGE SIZE CHECKER
     }
     
-    
-    
+    func isEmptyField() -> Bool {
+        print(self.choreTitle.text)
+        if self.choreTitle.text == "" {
+            print("ChoreTitle field is empty")
+            let alert = UIAlertController(title: "Empty field!", message:"You must fill in the Chore Title. Try again.", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .Default) { _ in })
+            self.presentViewController(alert, animated: true){}
+            return true
+        } else {
+            print("They are okay")
+            return false
+        }
+    }
+
     @IBAction func createPressed(sender: AnyObject) {
         choreTitle.resignFirstResponder()
-        var pictureData: NSData
-        
-        if (choreImage.image != nil){
-            pictureData = UIImagePNGRepresentation(choreImage.image!)!
-        } else {
-            pictureData = UIImagePNGRepresentation(UIImage(named: "chore.jpg")!)!
-        }
-        
-        //Upload a new picture
-        //1
-        let file = PFFile(name: "chore_image", data: pictureData)
-        
-        //TRYING TO FIND A WAY FOR IMAGE SIZE CHECKER
-        file!.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
-            if succeeded {
-                //2
-                self.saveNewChoreEntry(file!)
-            } else if let error = error {
-                //3
-                print("there is an error while saveInBackgroundWithBlock",error)
+        if isEmptyField() == false {
+            var pictureData: NSData
+            
+            if (choreImage.image != nil){
+                pictureData = UIImagePNGRepresentation(choreImage.image!)!
+            } else {
+                pictureData = UIImagePNGRepresentation(UIImage(named: "chore.jpg")!)!
             }
-        })
-        
+            
+            //Upload a new picture
+            //1
+            let file = PFFile(name: "chore_image", data: pictureData)
+            
+            //TRYING TO FIND A WAY FOR IMAGE SIZE CHECKER
+            file!.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
+                if succeeded {
+                    //2
+                    self.saveNewChoreEntry(file!)
+                } else if let error = error {
+                    //3
+                    print("there is an error while saveInBackgroundWithBlock",error)
+                }
+            })
+        }
     }
     
     
@@ -73,11 +86,11 @@ class CreateChoreViewController: UIViewController {
         chore.saveInBackgroundWithBlock{ succeeded, error in
             if succeeded {
                 //3
-                print("Created new household successfully")/*
+                print("Created new chore successfully")
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HouseholdsOverview")
-                self.presentViewController(viewController, animated: true, completion: nil)
-                }) */
+                //let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupanciesOverview")
+                //self.presentViewController(viewController, animated: true, completion: nil)
+                })
                 self.navigationController?.popViewControllerAnimated(true)
             } else {
                 //4
