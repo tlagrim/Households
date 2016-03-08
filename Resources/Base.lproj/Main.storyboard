@@ -458,9 +458,7 @@
                             <outlet property="delegate" destination="pWQ-Nd-NtX" id="Pkq-dx-lZ4"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="XTD-3f-v9M"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="g5l-AC-z5J">
                         <barButtonItem key="leftBarButtonItem" title="&lt;&lt;" id="AVk-X0-jeS"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wFO-D9-d7l">
@@ -1537,6 +1535,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Zab-Bc-87f"/>
         <segue reference="rLy-Zw-qEH"/>
-        <segue reference="TrK-2R-McY"/>
+        <segue reference="b5i-L6-5QQ"/>
     </inferredMetricsTieBreakers>
 </document>
