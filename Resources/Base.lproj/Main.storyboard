@@ -409,6 +409,11 @@
                                 <segue destination="rfo-MB-2tk" kind="show" id="JSC-a3-cIh"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="FHN-Yg-se3">
+                            <connections>
+                                <segue destination="xHm-Rg-x7F" kind="show" id="Wyc-mV-n27"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKa-ZF-JvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -849,14 +854,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Build New Household" id="vIS-6F-8qn">
-                        <barButtonItem key="rightBarButtonItem" title="Join Existing" id="8bC-cU-QJR">
-                            <connections>
-                                <segue destination="xHm-Rg-x7F" kind="show" id="gW2-uQ-T3z"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Build New Household" id="vIS-6F-8qn"/>
                     <connections>
+                        <outlet property="buildHouseholdButton" destination="FP6-Tp-Uq4" id="R5C-vv-v1x"/>
                         <outlet property="householdCityTextField" destination="puy-zy-DSc" id="BEc-m6-ANb"/>
                         <outlet property="householdCountryTextField" destination="SKZ-J0-ZEk" id="3ji-zP-5Kf"/>
                         <outlet property="householdImageToUpload" destination="PoF-2V-bZB" id="ZWm-BO-w2j"/>
@@ -907,7 +907,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Dl-dE-EuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2988" y="738"/>
+            <point key="canvasLocation" x="2334" y="1443"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Bv-2r-OBP">
@@ -1535,8 +1535,8 @@
         <image name="key_img2.png" width="438" height="326"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zab-Bc-87f"/>
-        <segue reference="rLy-Zw-qEH"/>
         <segue reference="TrK-2R-McY"/>
+        <segue reference="Zab-Bc-87f"/>
+        <segue reference="GUE-8i-Pdj"/>
     </inferredMetricsTieBreakers>
 </document>

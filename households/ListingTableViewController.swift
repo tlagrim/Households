@@ -46,6 +46,9 @@ class ListingTableViewController: PFQueryTableViewController {
         occupancyQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 self.currentOccupancy = objects![0]
+                for obj in objects!{
+                    print("Got obj: ",obj)
+                }
             } else {
                 print("Sorry, couldn't get the Occupancy")
             }

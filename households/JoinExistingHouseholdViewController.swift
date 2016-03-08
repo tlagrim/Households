@@ -9,20 +9,24 @@
 import Foundation
 import UIKit
 
+
+
 class JoinExistingHouseholdViewController: UIViewController {
     
     
     @IBOutlet weak var keyInput: UITextField!
     
+    
     override func viewDidLoad() {
         print("inside of JoinExistingHouseholdViewController")
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        
     }
     
     @IBAction func joinPressed(sender: AnyObject) {
         let keyString = self.keyInput.text
-        var theHousehold = Household() as! PFObject
+        var theHousehold = Household() as PFObject
         let hquery = PFQuery(className: Household.parseClassName())
         hquery.whereKey("key", equalTo: keyString!)
         

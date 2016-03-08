@@ -71,7 +71,6 @@ class OccupyTableViewController: PFQueryTableViewController {
         cell.membersLabel.text = "Occupants: "
         
         let occupancyQuery = PFQuery(className: Occupy.parseClassName())
-        let userQuery = PFUser.query()
         // find all occupancies where occupy.household == currenthousehold
 
         // occupancyQuery.whereKey("occupant", matchesQuery: userQuery!)

@@ -23,59 +23,94 @@ class CreateHouseholdViewController: UIViewController {
     @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     @IBOutlet weak var householdCountryTextField: UITextField!
     
+    @IBOutlet weak var buildHouseholdButton: UIButton!
     var username: String?
     
     override func viewDidLoad() {
+        print("adfadsfdsf")
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
     }
     
+    func isEmptyField() -> Bool {
+        print(self.householdNameTextField.text)
+        
+        if self.householdNameTextField.text == "" {
+            print("Household name field is empty")
+            return true
+        } else  if self.householdKeyTextField.text == "" {
+            print("Household key field is empty")
+            return true
+        } else {
+            print("They are okay")
+            return false
+        }
+    }
+    
     override func viewWillAppear(animated: Bool) {
         print("inside createhouseholdVC")
+        
     }
     
     @IBAction func selectPicturePressed(sender: AnyObject) {
         //Open a UIImagePickerController to select the picture
+        
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         presentViewController(imagePicker, animated: true, completion: nil)
+        
         //TRYING TO FIND A WAY FOR IMAGE SIZE CHECKER
     }
     
     
     
     @IBAction func buildHouseholdPressed(sender: AnyObject) {
-        householdNameTextField.resignFirstResponder()
-        householdKeyTextField.resignFirstResponder()
-        let zip = self.householdZipTextField.text
-        let finalZip: Int = Int(zip!)!
-        
-        //Disable the send button until we are ready
-        navigationItem.rightBarButtonItem?.enabled = false
-        
-        loadingSpinner.startAnimating()
-        
-        let pictureData = UIImagePNGRepresentation(householdImageToUpload.image!)
-        
-        //Upload a new picture
-        //1
-        let file = PFFile(name: "household_image", data: pictureData!)
-        
-        //TRYING TO FIND A WAY FOR IMAGE SIZE CHECKER
-        file!.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
-            if succeeded {
-                //2
-                self.saveNewHouseholdEntry(file!, finalZip: finalZip)
-            } else if let error = error {
-                //3
-                print("there is an error while saveInBackgroundWithBlock",error)
+        if isEmptyField() == true {
+            print("Check required fields.")
+        } else {
+            householdNameTextField.resignFirstResponder()
+            householdKeyTextField.resignFirstResponder()
+            let zip = self.householdZipTextField.text
+            var finalZip: Int = 0
+            
+            if zip == nil {
+                finalZip = Int(zip!)!
             }
-            }, progressBlock: { percent in
-                //4
-                print("Uploaded: \(percent)%")
-        })
-        
+            
+            //Disable the send button until we are ready
+            navigationItem.rightBarButtonItem?.enabled = false
+            
+            loadingSpinner.startAnimating()
+            
+            
+            var pictureData: NSData
+            
+            if (householdImageToUpload.image != nil){
+                pictureData = UIImagePNGRepresentation(householdImageToUpload.image!)!
+            } else {
+                pictureData = UIImagePNGRepresentation(UIImage(named: "houseplaceholder.png")!)!
+            }
+            
+            //Upload a new picture
+            //1
+            let file = PFFile(name: "household_image", data: pictureData)
+            
+            //TRYING TO FIND A WAY FOR IMAGE SIZE CHECKER
+            file!.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
+                if succeeded {
+                    //2
+                    self.saveNewHouseholdEntry(file!, finalZip: finalZip)
+                } else if let error = error {
+                    //3
+                    print("there is an error while saveInBackgroundWithBlock",error)
+                }
+                }, progressBlock: { percent in
+                    //4
+                    print("Uploaded: \(percent)%")
+            })
+        }
     }
     
     
@@ -101,7 +136,7 @@ class CreateHouseholdViewController: UIViewController {
             }
         }
     }
-
+    
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.

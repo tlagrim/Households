@@ -95,6 +95,23 @@ class HouseholdTableViewController: PFQueryTableViewController {
         print("return cell")
         return cell
     }
+    
+    
+    // Edit the cell and delete by swiping left
+    func tableVew(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            //var selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! AssignmentTableViewCell
+            /*tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            loadObjects()*/
+            let obj = self.objects![indexPath.row]
+            obj.deleteInBackground()
+            tableView.reloadData()
+        }
+    }
+    
     /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "editStore"
