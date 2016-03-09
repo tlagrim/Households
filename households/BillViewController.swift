@@ -16,8 +16,6 @@ var householdBillsValsArray: [Double] = []
 
 
 class BillViewController: UIViewController {
-    var switchToSend = 0 // just me
-    
     @IBOutlet weak var theHouseholdContainer: UIView!
     @IBOutlet weak var theJustMeContainer: UIView!
     @IBOutlet weak var monthyDuesLabel: UILabel!
@@ -28,8 +26,22 @@ class BillViewController: UIViewController {
     @IBOutlet weak var nameBillPressedLabel: UILabel!
     @IBOutlet weak var amtBillPressedLabel: UILabel!
     
+    
+    /*
+    
+    var existingHouseholdBills: [PFObject] = []
+    var existingJustMeBills: [PFObject] = []
+    var existingHouseholdPayments: [PFObject] = []
+    var existingJustMePayments: [PFObject] = []
+    
+    */
+    
+    var householdBillTotal: Double = 0
+    var justMePaymentTotal: Double = 0
     override func viewDidLoad() {
-        print("Class: BillViewController\nViewDidLoad()")
+        initializeView(0)
+        
+        // print("Class: BillViewController\nViewDidLoad()")
         if self.revealViewController() != nil {
             openMenu.target = self.revealViewController()
             openMenu.action = "revealToggle:"
@@ -37,9 +49,25 @@ class BillViewController: UIViewController {
         }
         theHouseholdContainer.hidden = false
         theJustMeContainer.hidden = true
-        // monthyDuesLabel.text = theCurrentOccupancyBillTotal.description
-        //justMeBillsValsArray.reduce(0,combine: +)
-        //householdBillsValsArray.reduce(0, combine: +)
+        
+    }
+    
+    func initializeView(theSwitch: Int) {
+        justMePaymentTotal = 0
+        householdBillTotal = 0
+        if theSwitch == 0 {
+            for aHouseholdBill in existingHouseholdBills {
+                householdBillTotal += Double((aHouseholdBill.objectForKey("remaining_amount")?.description)!)!
+            }
+            self.monthyDuesLabel.text = String(householdBillTotal)
+        }
+        
+        if theSwitch == 1 {
+            for aJustMePayment in existingHouseholdPayments {
+                justMePaymentTotal += Double((aJustMePayment.objectForKey("amount")?.description)!)!
+            }
+            self.monthyDuesLabel.text = String(justMePaymentTotal)
+        }
     }
     
     @IBAction func createNewBillPressed(sender: AnyObject) {
@@ -50,7 +78,7 @@ class BillViewController: UIViewController {
         print("Just me tab/button pressed")
         theHouseholdContainer.hidden = true
         theJustMeContainer.hidden = false
-        switchToSend = 0
+        initializeView(1)
         
     }
     
@@ -58,7 +86,7 @@ class BillViewController: UIViewController {
         print("Household tab/button pressed")
         theJustMeContainer.hidden = true
         theHouseholdContainer.hidden = false
-        switchToSend = 1
+        initializeView(0)
     }
     
     @IBAction func sortByName(sender: AnyObject) {

@@ -10,7 +10,6 @@ import Foundation
 
 class PaymentTableViewController: PFQueryTableViewController {
     
-    
     // must initialize this so that the parent controller has access
     weak var theParentVC: BillViewController?
     
