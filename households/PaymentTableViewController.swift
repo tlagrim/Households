@@ -27,11 +27,11 @@ class PaymentTableViewController: PFQueryTableViewController {
         super.viewDidLoad()
         
         if theSwitch == nil {
-            print("theSwitch is nil")
+            // print("theSwitch is nil")
             theSwitch = 0 // default to showing just me payments
         }
         
-        print("The switch: ",theSwitch!)
+        // print("The switch: ",theSwitch!)
         
         self.tableView.rowHeight = 30
         if self.revealViewController() != nil {
@@ -65,7 +65,7 @@ class PaymentTableViewController: PFQueryTableViewController {
     }
     
     override func queryForTable() -> PFQuery {
-        print("\nPaymentTVC\nfunc queryForTable() PFQ")
+        // print("\nPaymentTVC\nfunc queryForTable() PFQ")
         let paymentQuery = PFQuery(className: "Payment")
         paymentQuery.includeKey("bill")
         paymentQuery.includeKey("household")        

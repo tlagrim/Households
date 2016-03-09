@@ -25,8 +25,6 @@ class HouseholdBillTableViewController: PFQueryTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         if theSwitch == nil {
             print("theSwitch is nil")
             theSwitch = 1 // default to showing household bills
@@ -49,7 +47,6 @@ class HouseholdBillTableViewController: PFQueryTableViewController {
     
     override func viewWillAppear(animated: Bool) {
         //loadObjects()
-        
     }
     
     override func queryForTable() -> PFQuery {

@@ -19,32 +19,32 @@ class OccupyTableViewController: PFQueryTableViewController {
     
     override func viewWillAppear(animated: Bool) {
         if (PFUser.currentUser() == nil) {
-            print("PFUser == nil")
+            // print("PFUser == nil")
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login")
                 self.presentViewController(viewController, animated: true, completion: nil)
             })
         }
-        print("Class: OccupyTVC\nviewwillappear()\nloadObjects()")
+        // print("Class: OccupyTVC\nviewwillappear()\nloadObjects()")
         loadObjects()
     }
     
     override func queryForTable() -> PFQuery {
-        print("Class: OccupyTVC\nfunc queryForTable() PFQ")
-        print("let query...\nwhere key occupant equal to user\nret query")
+        // print("Class: OccupyTVC\nfunc queryForTable() PFQ")
+        // print("let query...\nwhere key occupant equal to user\nret query")
         //let query = Occupy.query()
         let user = PFUser.currentUser()
         
         // 1
         // Create a PFQuery object for the Occupy class.
-        print("let query = PFQuery(className: Occupy())")
+        // print("let query = PFQuery(className: Occupy())")
         let occupancy = PFQuery(className: Occupy.parseClassName())
         
         // 2
         // Request that this query will return the full occupant and household details.
         // Without this line of code, the query will just return the
         // object reference of the user without its details.
-        print("query.includeKey(\"createdBy\")")
+        // print("query.includeKey(\"createdBy\")")
         occupancy.whereKey("occupant", equalTo: user!)
         
         occupancy.includeKey("occupant")
@@ -53,16 +53,16 @@ class OccupyTableViewController: PFQueryTableViewController {
         
         // 3
         // Sort the results by their creation date.
-        print("query.orderByDescending(\"updatedAt\")")
+        // print("query.orderByDescending(\"updatedAt\")")
         occupancy.orderByDescending("updatedAt")
-        print("return query")
+        // print("return query")
         
         return occupancy
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {
         // 1
-        print("Class: OccupyTVC\nfunc tableView\n...\nret cell")
+        // print("Class: OccupyTVC\nfunc tableView\n...\nret cell")
         let cell = tableView.dequeueReusableCellWithIdentifier("OccupyCell", forIndexPath: indexPath) as! OccupyTableViewCell
         
         // 2
@@ -137,12 +137,13 @@ class OccupyTableViewController: PFQueryTableViewController {
             tableView.reloadData()
         }
     }
-    
     // Once a cell is pressed, this function sets false to previous is_active_occupancy
     // and sets true to the new one.
     // Afterwards, go back to the tabview with corresponding data
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let obj = self.objects![indexPath.row]
+        //theBillsArray = GlobalInitializers().sortBillForHousehold(obj.objectForKey("household")?.valueForKey("objectId") as? String)!
+        GlobalInitializers().filterBillForHousehold(obj.objectForKey("household")?.valueForKey("objectId") as! String)
         for object in objects! {
             if object.valueForKey("is_active_occupancy") as! NSObject == 1 {
                 object.setValue(false, forKey: "is_active_occupancy")
@@ -161,6 +162,16 @@ class OccupyTableViewController: PFQueryTableViewController {
             self.presentViewController(viewController, animated: true, completion: nil)
         })
         
+        print("Bills array: ", existingBills)
+        print("Payments array: ", existingPayments)
+        print("Household Payments array: ", existingHouseholdPayments)
+        print("Household Bills array: ", existingHouseholdBills)
+        print("Just me payments array: ", existingJustMePayments)
+        print("Just me bills: ", existingJustMeBills)
+        
+        
+        
+
     }
     
     /*

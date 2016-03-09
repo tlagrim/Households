@@ -71,20 +71,6 @@ class Assignment: PFObject, PFSubclassing {
         // assignmentQuery.whereKey("household", matchesKey: "is_active_occupancy", inQuery: occupancyQuery)
         assignmentQuery.whereKey("household", matchesKey: "household", inQuery: occupancyQuery)
         
-        /*
-        let user = PFUser.currentUser()
-        let assignment = PFQuery(className: Assignment.parseClassName())
-        let query = PFQuery(className: Occupy.parseClassName())
-        
-        query.whereKey("occupant", equalTo: user!)
-        
-        assignment.includeKey("chore")
-        assignment.includeKey("household")
-        assignment.includeKey("assigned_to")
-        assignment.includeKey("assignment_creator")
-        assignment.whereKey("household", matchesKey: "household", inQuery: query)
-        */
-        //print("querying in Assignment")
         return assignmentQuery
     }
 }

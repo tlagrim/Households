@@ -105,9 +105,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //            application.registerForRemoteNotificationTypes(types)
         //        }
         
-        
-        createAllExistingObjects()
-        
+        GlobalInitializers().createAllExistingObjects()
+        GlobalInitializers().initializeExistingBills()
+        GlobalInitializers().initializeExistingPayments()
+
         return true
     }
     
