@@ -17,6 +17,7 @@ class CreatePaymentViewController: UIViewController {
     @IBOutlet weak var addContributorBtn: UIButton!
     @IBOutlet weak var segCtrlPrivacy: UISegmentedControl!
     @IBOutlet weak var incomingBillLabel: UILabel!
+    @IBOutlet weak var calcSubtotalButton: UIButton!
     
     var theIncomingBill: Bill! // the associated bill for the following payments
     var currentOccupancyForNewPayment: PFObject?
@@ -34,6 +35,7 @@ class CreatePaymentViewController: UIViewController {
     var tempSubTotal: Double = 1
     
     override func viewDidLoad() {
+        calcSubtotalButton.hidden = true
         addContributorBtn.hidden = true
         contrTxtField.hidden = true
         
@@ -45,6 +47,7 @@ class CreatePaymentViewController: UIViewController {
         
         let occupancyQuery = PFQuery(className: Occupy.parseClassName())
         occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.whereKey("occupant", equalTo: PFUser.currentUser()!)
         occupancyQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 self.currentOccupancyForNewPayment = objects![0]
@@ -79,6 +82,7 @@ class CreatePaymentViewController: UIViewController {
     
     
     @IBAction func createPaymentPressed(sender: AnyObject) {
+        
         print("Numcontributorsadded: ",numContributorsAdded)
         if numContributorsAdded == 0 {
             let payment = Payment(bill: self.theIncomingBill, contributor: PFUser.currentUser()!, household: self.theIncomingBill.household, is_complete: false, is_repeat: false, is_private: self.segCtrlPrivacyVal, amount: self.theIncomingBill.total_amount, percentage: 100)
@@ -89,6 +93,9 @@ class CreatePaymentViewController: UIViewController {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         //let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AssignmentsOverview")
                         //self.presentViewController(viewController, animated: true, completion: nil)
+                        GlobalInitializers().createAllExistingObjects()
+                        GlobalInitializers().initializeExistingBills()
+                        GlobalInitializers().initializeExistingPayments()
                         self.navigationController?.popViewControllerAnimated(true)
                     })
                 } else {
@@ -113,6 +120,7 @@ class CreatePaymentViewController: UIViewController {
     
     @IBAction func segCtrlPressed(sender: AnyObject) {
         if segCtrlPrivacy.selectedSegmentIndex == 0 {
+            calcSubtotalButton.hidden = true
             segCtrlPrivacyVal = true
             print("Just Me")
             contrTxtField.hidden = true
@@ -127,6 +135,7 @@ class CreatePaymentViewController: UIViewController {
             txtContrFieldY = 0
         }
         if segCtrlPrivacy.selectedSegmentIndex == 1 {
+            calcSubtotalButton.hidden = false
             segCtrlPrivacyVal = false
             print("Household")
             contrTxtField.hidden = false
@@ -181,10 +190,7 @@ class CreatePaymentViewController: UIViewController {
         
         var contributorAssignedTo = PFUser()
         let contributorQuery = PFUser.query()
-        
         if theIndex < numContributorsAdded {
-            
-            
             if txtContrFields[theIndex].text != PFUser.currentUser()?.username {
                 contributorQuery?.whereKey("username", equalTo: txtContrFields[theIndex].text!)
                 contributorQuery!.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
@@ -202,9 +208,9 @@ class CreatePaymentViewController: UIViewController {
                                     print("Payment to be saved\n: \(payment)")
                                     print("Created new assignment successfully")
                                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                        //let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AssignmentsOverview")
-                                        //self.presentViewController(viewController, animated: true, completion: nil)
-                                        self.navigationController?.popViewControllerAnimated(true)
+                                        let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupancyDetail")
+                                        self.presentViewController(viewController, animated: true, completion: nil)
+                                        //self.navigationController?.popViewControllerAnimated(true)
                                     })
                                 } else {
                                     if let errorMessage = error?.userInfo["error"] as? String {
@@ -227,11 +233,10 @@ class CreatePaymentViewController: UIViewController {
                 payment.saveInBackgroundWithBlock{ succeeded, error in
                     if succeeded {
                         print("Payment to be saved\n: \(payment)")
-                        print("Created new assignment successfully")
+                        print("Created new payment successfully")
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            //let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AssignmentsOverview")
-                            //self.presentViewController(viewController, animated: true, completion: nil)
-                            self.navigationController?.popViewControllerAnimated(true)
+                            let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupancyDetail")
+                            self.presentViewController(viewController, animated: true, completion: nil)
                         })
                     } else {
                         if let errorMessage = error?.userInfo["error"] as? String {

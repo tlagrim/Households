@@ -14,6 +14,7 @@ class CreateAssignmentViewController: UIViewController {
     @IBOutlet weak var choreTitle: UITextField!
     @IBOutlet weak var assignTo: UITextField!
     
+    @IBOutlet var openMenu: UIBarButtonItem!
     
     // Occupy Object
     var currentOccupancyForNewAssignment: PFObject?
@@ -27,6 +28,7 @@ class CreateAssignmentViewController: UIViewController {
         // this block of code grabs the current Occupancy
         let occupancyQuery = PFQuery(className: Occupy.parseClassName())
         occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.whereKey("occupant", equalTo: PFUser.currentUser()!)
         occupancyQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 self.currentOccupancyForNewAssignment = objects![0]
@@ -34,6 +36,12 @@ class CreateAssignmentViewController: UIViewController {
                 print("Sorry, couldn't get the Occupancy")
             }
         }
+        if self.revealViewController() != nil {
+            openMenu.target = self.revealViewController()
+            openMenu.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
     }
     override func viewWillAppear(animated: Bool) {
         print("inside createhouseholdVC")
@@ -66,7 +74,8 @@ class CreateAssignmentViewController: UIViewController {
         // theHousehold             YES
         
         if isEmptyField() == false {
-            let currentOccupant = currentOccupancyForNewAssignment?.objectForKey("occupant") as! PFUser
+            //let currentOccupant = currentOccupancyForNewAssignment?.objectForKey("occupant") as! PFUser
+            let currentOccupant = PFUser.currentUser()
             let currentHousehold = currentOccupancyForNewAssignment?.objectForKey("household") as! PFObject
             
             print("Current Occupant: ",currentOccupant)
@@ -102,7 +111,7 @@ class CreateAssignmentViewController: UIViewController {
                     userAssignedTo = objects![0] as! PFUser
                     userAssignedTo.signUpInBackgroundWithBlock { (success, error) -> Void in
                         print("Signed up user")
-                        let assignment = Assignment(chore: theChore, household: currentHousehold, assigned_to: userAssignedTo, assignment_creator: currentOccupant, message: "Automated", is_complete: false)
+                        let assignment = Assignment(chore: theChore, household: currentHousehold, assigned_to: userAssignedTo, assignment_creator: currentOccupant!, message: "Automated", is_complete: false)
                         
                         assignment.saveInBackgroundWithBlock{ succeeded, error in
                             
@@ -110,7 +119,7 @@ class CreateAssignmentViewController: UIViewController {
                                 print("Assignment to be saved\n: \(assignment)")
                                 print("Created new assignment successfully")
                                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBar")
+                                    let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupancyDetail")
                                     self.presentViewController(viewController, animated: true, completion: nil)
                                     //self.navigationController?.popViewControllerAnimated(true)
                                     
@@ -150,9 +159,13 @@ class CreateAssignmentViewController: UIViewController {
     
     
     @IBAction func cancelPressed(sender: AnyObject) {
-        let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBar")
+        /*
+        let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupanciesOverview")
         self.presentViewController(viewController, animated: true, completion: nil)
-        print("Cancel Pressed")
+        */
+        //print("Cancel Pressed")
+        self.navigationController?.popViewControllerAnimated(true)
+        
     }
     
     func dismissKeyboard() {

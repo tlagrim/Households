@@ -12,15 +12,14 @@ import Parse
 
 class ResetPasswordViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
-    //@IBOutlet var imageLights: FLAnimatedImageView!
+    @IBOutlet var imageLoginBackground: FLAnimatedImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let imageTheLights: FLAnimatedImage = FLAnimatedImage(animatedGIFData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lights", ofType: "gif")!))
-        //self.imageLights.animatedImage = imageTheLights
-        
-        //[self.view .addSubview(self.imageLights)]
-        // Do any additional setup after loading the view.
+        let imageTheLoginBackground: FLAnimatedImage = FLAnimatedImage(animatedGIFData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("studylapse", ofType: "gif")!))
+        self.imageLoginBackground.animatedImage = imageTheLoginBackground
+        self.imageLoginBackground.contentMode = UIViewContentMode.ScaleAspectFill
+        [self.view .addSubview(self.imageLoginBackground)]
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
     }
@@ -40,12 +39,10 @@ class ResetPasswordViewController: UIViewController {
         let alert = UIAlertController (title: "Password Reset", message: "An email containing information on how to reset your password has been sent to " + finalEmail + ".", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
-        
     }
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-    
 }

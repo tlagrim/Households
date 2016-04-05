@@ -10,6 +10,17 @@ import Foundation
 
 class AssignmentTableViewController: PFQueryTableViewController {
     
+    @IBAction func viewDebugger(sender: AnyObject) {
+        print("\n\nAssignmentTableViewController Debugger:")
+        if self.revealViewController() != nil {
+            print("revealViewController != nil: No issue.")
+            openMenu.target = self.revealViewController()
+            openMenu.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        } else {
+            print("revealViewController == nil: There is an issue!!")
+        }
+    }
     // both objects are Occupy objects
     // var currentOccupancy: PFObject?
     // var currentOccupancy2: PFObject?
@@ -17,61 +28,61 @@ class AssignmentTableViewController: PFQueryTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+        let assignmentQuery = PFQuery(className: Assignment.parseClassName())
+        
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.whereKey("occupant", equalTo: PFUser.currentUser()!)
+        assignmentQuery.includeKey("chore")
+        assignmentQuery.includeKey("household")
+        assignmentQuery.includeKey("assigned_to")
+        assignmentQuery.includeKey("assignment_creator")
+        // assignmentQuery.whereKey("household", matchesKey: "is_active_occupancy", inQuery: occupancyQuery)
+        assignmentQuery.whereKey("household", matchesKey: "household", inQuery: occupancyQuery)
+        
+        return assignmentQuery
+        
+        */
+        
+        
         if self.revealViewController() != nil {
             openMenu.target = self.revealViewController()
             openMenu.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
-        // NOTE: when currentOccupancy comes in,
-        // immediately query for the household and users
-        /// maybe this way we'll get the info before I need it.
-        /*
-        if currentOccupancy == nil && currentOccupancy2 == nil {
-            print("both are nil")
-        } else if currentOccupancy == nil && currentOccupancy2 != nil{
-            print ("1st is nil, 2nd is not nil")
-            currentOccupancy = currentOccupancy2
-        } else if currentOccupancy != nil && currentOccupancy2 == nil {
-            print ("2nd is nil, 1st is not nil")
-        } else {
-            print("both are not nil")
-            currentOccupancy = currentOccupancy2
-        }
-        
-        let household = currentOccupancy?.objectForKey("household")
-        let householdName = household?.valueForKey("household_name")
-        */
-        //self.title = householdName?.description
         self.title = "Chores"
-        // print("self.title = currentOccupancy?.description")
-        // print(currentOccupancy?.description)
-     
     }
     
     
     override func viewWillAppear(animated: Bool) {
-        print("Class: AssignmentTBC\nviewwillappear()\nloadObjects()")
-        //loadObjects()
+        if (PFUser.currentUser() == nil) {
+            print("PFUser == nil")
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login")
+                self.presentViewController(viewController, animated: true, completion: nil)
+            })
+        } // elseif there is no current occupancy, then go to main menu
         
-        
-
+        print("loadObjects")
+        loadObjects()
+        print("finished loading objects")
     }
     
     override func queryForTable() -> PFQuery {
         print("\n\nClass: AssignmentTVC\nfunc queryForTable() PFQ")
         print("let query = PFQuery(className: Assignment.parseClassName())")
         let query = Assignment.query()
-
+        
         return query!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {
-
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("AssignmentCell", forIndexPath: indexPath) as! AssignmentTableViewCell
         
         let assignment = object as! Assignment
-        let assignmentChore = assignment.chore 
+        let assignmentChore = assignment.chore
         let assignedTo = assignment.assigned_to
         
         if let theFile = assignmentChore.valueForKey("chore_image") as? PFFile {
@@ -117,13 +128,13 @@ class AssignmentTableViewController: PFQueryTableViewController {
     */
     /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "NewAssignmentSegue"){
-            let indexPath = self.tableView.indexPathForSelectedRow
-            // object is a Occupy object
-            let obj = currentOccupancy
-            let navVC = segue.destinationViewController as! UINavigationController
-            let householdAssignmentsVC = navVC.topViewController as! CreateAssignmentViewController
-            householdAssignmentsVC.currentOccupancyForNewAssignment = obj
-        }
+    if(segue.identifier == "NewAssignmentSegue"){
+    let indexPath = self.tableView.indexPathForSelectedRow
+    // object is a Occupy object
+    let obj = currentOccupancy
+    let navVC = segue.destinationViewController as! UINavigationController
+    let householdAssignmentsVC = navVC.topViewController as! CreateAssignmentViewController
+    householdAssignmentsVC.currentOccupancyForNewAssignment = obj
+    }
     }*/
 }

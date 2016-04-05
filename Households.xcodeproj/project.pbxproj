@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0604A21C9236A200107470 /* userplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0604A11C9236A200107470 /* userplaceholder.png */; };
 		7C1388441C60529300862041 /* DSC_1133.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 7C1388431C60529300862041 /* DSC_1133.JPG */; };
 		7C1388461C6069CF00862041 /* Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C1388451C6069CF00862041 /* Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg */; };
 		7C1388481C606AB200862041 /* houseplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1388471C606AB200862041 /* houseplaceholder.png */; };
@@ -27,6 +28,10 @@
 		7C5B060E1C5F40B500E137E4 /* Occupy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B060D1C5F40B500E137E4 /* Occupy.swift */; };
 		7C5B06101C5F40C400E137E4 /* OccupyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B060F1C5F40C400E137E4 /* OccupyTableViewCell.swift */; };
 		7C8824441C73262100803A7C /* grocerybag.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C8824431C73262100803A7C /* grocerybag.jpg */; };
+		7C9002D61C9823C900F8A1BF /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9002D31C9823C900F8A1BF /* FLAnimatedImage.m */; };
+		7C9002D71C9823C900F8A1BF /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9002D51C9823C900F8A1BF /* FLAnimatedImageView.m */; };
+		7C9002D91C9824EA00F8A1BF /* studylapse.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7C9002D81C9824EA00F8A1BF /* studylapse.gif */; };
+		7C9002DB1C98258000F8A1BF /* NewLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9002DA1C98258000F8A1BF /* NewLogin.swift */; };
 		7C9BF6951C854B1700EB669F /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BF6941C854B1700EB669F /* BillViewController.swift */; };
 		7C9BF6971C8576A600EB669F /* PaymentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BF6961C8576A600EB669F /* PaymentTableViewController.swift */; };
 		7C9BF6991C8578C900EB669F /* PaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9BF6981C8578C900EB669F /* PaymentTableViewCell.swift */; };
@@ -82,6 +87,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C0604A11C9236A200107470 /* userplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userplaceholder.png; sourceTree = "<group>"; };
 		7C1388431C60529300862041 /* DSC_1133.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC_1133.JPG; sourceTree = "<group>"; };
 		7C1388451C6069CF00862041 /* Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg; sourceTree = "<group>"; };
 		7C1388471C606AB200862041 /* houseplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = houseplaceholder.png; sourceTree = "<group>"; };
@@ -104,6 +110,12 @@
 		7C5B060D1C5F40B500E137E4 /* Occupy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Occupy.swift; sourceTree = "<group>"; };
 		7C5B060F1C5F40C400E137E4 /* OccupyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccupyTableViewCell.swift; sourceTree = "<group>"; };
 		7C8824431C73262100803A7C /* grocerybag.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grocerybag.jpg; sourceTree = "<group>"; };
+		7C9002D21C9823C900F8A1BF /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		7C9002D31C9823C900F8A1BF /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		7C9002D41C9823C900F8A1BF /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		7C9002D51C9823C900F8A1BF /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
+		7C9002D81C9824EA00F8A1BF /* studylapse.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = studylapse.gif; sourceTree = "<group>"; };
+		7C9002DA1C98258000F8A1BF /* NewLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLogin.swift; sourceTree = "<group>"; };
 		7C9BF6941C854B1700EB669F /* BillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		7C9BF6961C8576A600EB669F /* PaymentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentTableViewController.swift; sourceTree = "<group>"; };
 		7C9BF6981C8578C900EB669F /* PaymentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentTableViewCell.swift; sourceTree = "<group>"; };
@@ -263,6 +275,17 @@
 				7C5B060F1C5F40C400E137E4 /* OccupyTableViewCell.swift */,
 			);
 			name = Occupy;
+			sourceTree = "<group>";
+		};
+		7C9002D11C9823AF00F8A1BF /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				7C9002D21C9823C900F8A1BF /* FLAnimatedImage.h */,
+				7C9002D31C9823C900F8A1BF /* FLAnimatedImage.m */,
+				7C9002D41C9823C900F8A1BF /* FLAnimatedImageView.h */,
+				7C9002D51C9823C900F8A1BF /* FLAnimatedImageView.m */,
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 		7C9C50371C5DCB2600B3C694 /* Products */ = {
@@ -543,6 +566,7 @@
 				7CFEE55F1C5BD8EB000AEEB7 /* LoginViewController.swift */,
 				7CFEE5611C5BD94D000AEEB7 /* RegisterViewController.swift */,
 				7CFEE5631C5BD996000AEEB7 /* ResetPasswordViewController.swift */,
+				7C9002DA1C98258000F8A1BF /* NewLogin.swift */,
 			);
 			name = Initial;
 			sourceTree = "<group>";
@@ -582,13 +606,16 @@
 			isa = PBXGroup;
 			children = (
 				7C1388451C6069CF00862041 /* Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg */,
+				7C9002D81C9824EA00F8A1BF /* studylapse.gif */,
 				7C1388531C6074B500862041 /* chore.jpg */,
+				7C0604A11C9236A200107470 /* userplaceholder.png */,
 				7C8824431C73262100803A7C /* grocerybag.jpg */,
 				7C1388431C60529300862041 /* DSC_1133.JPG */,
 				7C1388471C606AB200862041 /* houseplaceholder.png */,
 				7C5B06061C5F307700E137E4 /* DSC_1152.JPG */,
 				7C9C50361C5DCB2600B3C694 /* Households.xcodeproj */,
 				81BA81471A49DA1800E65899 /* Households */,
+				7C9002D11C9823AF00F8A1BF /* Library */,
 				814C3AC51B69877600E307BB /* Resources */,
 				81BA816A1A49DB5600E65899 /* Frameworks */,
 				81BA81461A49DA1800E65899 /* Products */,
@@ -731,9 +758,11 @@
 				7C1388461C6069CF00862041 /* Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg in Resources */,
 				7C1388441C60529300862041 /* DSC_1133.JPG in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
+				7C9002D91C9824EA00F8A1BF /* studylapse.gif in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
 				7C1388541C6074B500862041 /* chore.jpg in Resources */,
 				7C1388481C606AB200862041 /* houseplaceholder.png in Resources */,
+				7C0604A21C9236A200107470 /* userplaceholder.png in Resources */,
 				7C5B06071C5F307700E137E4 /* DSC_1152.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,6 +781,7 @@
 				7CFEE58F1C5D832B000AEEB7 /* Household.swift in Sources */,
 				7CDF981C1C73870F0020A6C7 /* Bill.swift in Sources */,
 				7CC399551C6A62CF00D87B7F /* GroceryTableViewCell.swift in Sources */,
+				7C9002D71C9823C900F8A1BF /* FLAnimatedImageView.m in Sources */,
 				7CDF981F1C7389FC0020A6C7 /* Payment.swift in Sources */,
 				7CC3994B1C6A1C4600D87B7F /* Listing.swift in Sources */,
 				7C1998561C7A4B5700402284 /* ViewController.swift in Sources */,
@@ -774,8 +804,10 @@
 				7C9BF6971C8576A600EB669F /* PaymentTableViewController.swift in Sources */,
 				7CC399511C6A1C8A00D87B7F /* CreateListingTableViewController.swift in Sources */,
 				7C9BF69B1C857B2B00EB669F /* CreatePaymentViewController.swift in Sources */,
+				7C9002D61C9823C900F8A1BF /* FLAnimatedImage.m in Sources */,
 				7C2F09A91C7A4767008EC73A /* Lagrimas.swift in Sources */,
 				7C1388521C60745F00862041 /* AssignmentTableViewCell.swift in Sources */,
+				7C9002DB1C98258000F8A1BF /* NewLogin.swift in Sources */,
 				7C19986D1C7A73CA00402284 /* SWRevealViewController.m in Sources */,
 				7CFEE57D1C5D0B6A000AEEB7 /* Chore.swift in Sources */,
 				7C9BF6951C854B1700EB669F /* BillViewController.swift in Sources */,

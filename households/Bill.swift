@@ -58,6 +58,7 @@ class Bill: PFObject, PFSubclassing {
         billQuery.includeKey("household")
         // assignmentQuery.whereKey("household", matchesKey: "is_active_occupancy", inQuery: occupancyQuery)
         billQuery.whereKey("household", matchesKey: "household", inQuery: occupancyQuery)
+        billQuery.orderByAscending("date_due")
         
         return billQuery
     }

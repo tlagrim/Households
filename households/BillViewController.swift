@@ -61,9 +61,8 @@ class BillViewController: UIViewController {
             }
             self.monthyDuesLabel.text = String(householdBillTotal)
         }
-        
         if theSwitch == 1 {
-            for aJustMePayment in existingHouseholdPayments {
+            for aJustMePayment in existingJustMePayments {
                 justMePaymentTotal += Double((aJustMePayment.objectForKey("amount")?.description)!)!
             }
             self.monthyDuesLabel.text = String(justMePaymentTotal)
@@ -79,7 +78,6 @@ class BillViewController: UIViewController {
         theHouseholdContainer.hidden = true
         theJustMeContainer.hidden = false
         initializeView(1)
-        
     }
     
     @IBAction func householdButton(sender: AnyObject) {

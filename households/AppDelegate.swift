@@ -108,7 +108,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GlobalInitializers().createAllExistingObjects()
         GlobalInitializers().initializeExistingBills()
         GlobalInitializers().initializeExistingPayments()
-
         return true
     }
     

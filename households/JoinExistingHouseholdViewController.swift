@@ -42,7 +42,7 @@ class JoinExistingHouseholdViewController: UIViewController {
     }
     
     @IBAction func joinPressed(sender: AnyObject) {
-        if self.keyInput.text != "" {
+        if self.keyInput.text != "" || self.keyInput.text == nil {
             if isExistingHousehold() {
                 let keyString = self.keyInput.text
                 var theHousehold = Household() as PFObject
@@ -60,8 +60,9 @@ class JoinExistingHouseholdViewController: UIViewController {
                             if succeeded {
                                 print("Created new Occupancy successfully")
                                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                    let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MyOccupancies")
-                                    self.presentViewController(viewController, animated: true, completion: nil)
+                                    //let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MyOccupancies")
+                                    //self.presentViewController(viewController, animated: true, completion: nil)
+                                    self.navigationController?.popViewControllerAnimated(true)
                                 })
                             } else {
                                 if let errorMessage = error?.userInfo["error"] as? String {

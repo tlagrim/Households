@@ -8,6 +8,12 @@
 
 import Foundation
 
+// For the case where there is no internet connection
+//  For every user that has signed into this device,
+//  securely save all their information including username
+//  and password so that they may be able to sign in and edit 
+//  how they like.
+
 var existingHouseholds:[PFObject] = []
 var existingOccupancies:[PFObject] = []
 var existingUsers:[PFUser] = []

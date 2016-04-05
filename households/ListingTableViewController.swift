@@ -22,13 +22,16 @@ class ListingTableViewController: PFQueryTableViewController {
             openMenu.target = self.revealViewController()
             openMenu.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        } else if self.revealViewController() == nil {
+            print("revealVC is nil")
+            
         }
         
         // NOTE: when currentOccupancy comes in,
         // immediately query for the household and users
         /// maybe this way we'll get the info before I need it.
         /*
-        if currentOccupancy == nil && currentOccupancy2 == nil {
+        if currentOccupancy == nil && currentOccupancy2 == nil { 
             print("both are nil")
         } else if currentOccupancy == nil && currentOccupancy2 != nil{
             print ("1st is nil, 2nd is not nil")
@@ -43,6 +46,7 @@ class ListingTableViewController: PFQueryTableViewController {
         // this block of code grabs the current Occupancy
         let occupancyQuery = PFQuery(className: Occupy.parseClassName())
         occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.whereKey("occupant", equalTo: PFUser.currentUser()!)
         occupancyQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 self.currentOccupancy = objects![0]
@@ -66,6 +70,11 @@ class ListingTableViewController: PFQueryTableViewController {
     
     override func viewWillAppear(animated: Bool) {
         //loadObjects()
+        if self.revealViewController() != nil {
+            openMenu.target = self.revealViewController()
+            openMenu.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     override func queryForTable() -> PFQuery {

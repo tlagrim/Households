@@ -57,7 +57,8 @@ class Listing: PFObject, PFSubclassing {
         let listingQuery = PFQuery(className: Listing.parseClassName())
         
         occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
-        
+        occupancyQuery.whereKey("occupant", equalTo: PFUser.currentUser()!)
+
         listingQuery.includeKey("grocery_item")
         listingQuery.includeKey("creator")
         listingQuery.includeKey("household")

@@ -63,7 +63,7 @@ class Assignment: PFObject, PFSubclassing {
         let assignmentQuery = PFQuery(className: Assignment.parseClassName())
         
         occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
-        
+        occupancyQuery.whereKey("occupant", equalTo: PFUser.currentUser()!)
         assignmentQuery.includeKey("chore")
         assignmentQuery.includeKey("household")
         assignmentQuery.includeKey("assigned_to")

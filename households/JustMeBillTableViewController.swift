@@ -31,15 +31,17 @@ class JustMeBillTableViewController: PFQueryTableViewController {
         
         self.tableView.rowHeight = 30
         
+        /*
         let occupancyQuery = PFQuery(className: Occupy.parseClassName())
         occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.whereKey("occupant", equalTo: PFUser.currentUser()!)
         occupancyQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 self.currentOccupancy = objects![0]
             } else {
                 print("Sorry, couldn't get the Occupancy")
             }
-        }
+        }*/
         
         self.title = "Bills"
     }
@@ -49,22 +51,35 @@ class JustMeBillTableViewController: PFQueryTableViewController {
     }
     
     override func queryForTable() -> PFQuery {
+        /*
         print("\n\nTJbilszClass: BillTVC\nfunc queryForTable() PFQ")
         let billQuery = Bill.query()
         billQuery?.includeKey("household")
         billQuery?.includeKey("creator")
         billQuery?.whereKey("creator", equalTo: PFUser.currentUser()!)
+        return billQuery!*/
         
-        return billQuery!
+        let paymentQuery = Payment.query()
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+        occupancyQuery.includeKey("household")
+        occupancyQuery.includeKey("occupant")
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.whereKey("occupant", equalTo: PFUser.currentUser()!)
+        paymentQuery?.includeKey("bill")
+        paymentQuery?.includeKey("contributor")
+        paymentQuery?.includeKey("household")
+        paymentQuery?.whereKey("contributor", equalTo: PFUser.currentUser()!)
+        paymentQuery!.whereKey("household", matchesKey: "household", inQuery: occupancyQuery)
+        
+        
+        return paymentQuery!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {
         print("\nClass: HouseholdBillTVC\nfunc tableView\n...\nret cell")
         print("The ob: ",object)
-        
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("JustMeBillCell", forIndexPath: indexPath) as! JustMeBillTableViewCell
-        
+        /*
         let bill = object as! Bill
         
         cell.desc.text = bill.desc
@@ -74,6 +89,18 @@ class JustMeBillTableViewController: PFQueryTableViewController {
         dateFormatter.dateFormat =  "MMMM dd"
         
         cell.dateDue.text = dateFormatter.stringFromDate(bill.date_due)
+        
+        return cell*/
+        let aPayment = object as! Payment
+        
+        cell.desc.text = aPayment.objectForKey("bill")?.valueForKey("desc")! as? String
+        
+        let thePaymentAmountTotal = aPayment.amount.description
+        cell.totalAmount.text = "$\(thePaymentAmountTotal)"
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat =  "MMMM dd"
+        
+        cell.dateDue.text = dateFormatter.stringFromDate((aPayment.objectForKey("bill")?.valueForKey("date_due")) as! NSDate)
         
         return cell
     }

@@ -67,10 +67,10 @@ class PaymentTableViewController: PFQueryTableViewController {
         // print("\nPaymentTVC\nfunc queryForTable() PFQ")
         let paymentQuery = PFQuery(className: "Payment")
         paymentQuery.includeKey("bill")
-        paymentQuery.includeKey("household")        
+        paymentQuery.includeKey("household")
+        paymentQuery.includeKey("contributor")
         paymentQuery.whereKey("contributor", equalTo: PFUser.currentUser()!)
-        paymentQuery.orderByDescending("createdAt")
-        
+        paymentQuery.orderByAscending("createdAt")
         return paymentQuery
     }
     

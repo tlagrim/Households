@@ -11,6 +11,9 @@ import UIKit
 
 class CreateHouseholdViewController: UIViewController {
     
+    @IBAction func helpMe(sender: AnyObject) {
+        print("Current user: ", PFUser.currentUser())
+    }
     @IBOutlet weak var householdNameTextField: UITextField!
     @IBOutlet weak var householdKeyTextField: UITextField!
     @IBOutlet weak var householdTypeTextField: UITextField!
@@ -125,6 +128,10 @@ class CreateHouseholdViewController: UIViewController {
                 //3
                 print("Created new household successfully")
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    GlobalInitializers().createAllExistingObjects()
+                    GlobalInitializers().initializeExistingBills()
+                    GlobalInitializers().initializeExistingPayments()
+                    print("Refreshed global initializers after new household")
                     let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HouseholdsOverview")
                     self.presentViewController(viewController, animated: true, completion: nil)
                 })

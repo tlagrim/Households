@@ -21,13 +21,16 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var dobPicker: UIDatePicker!
     @IBOutlet weak var imageToUpload: UIImageView!
     @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
+    var alertTitle: String = ""
+    var alertMessage: String = ""
+    @IBOutlet var imageRegisterBackground: FLAnimatedImageView!
     
-    //@IBOutlet var imageLights: FLAnimatedImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let imageTheLights: FLAnimatedImage = FLAnimatedImage(animatedGIFData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("lights", ofType: "gif")!))
-        //self.imageLights.animatedImage = imageTheLights
-        //[self.view .addSubview(self.imageLights)]
+        let imageTheRegisterBackground: FLAnimatedImage = FLAnimatedImage(animatedGIFData: NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("studylapse", ofType: "gif")!))
+        self.imageRegisterBackground.animatedImage = imageTheRegisterBackground
+        self.imageRegisterBackground.contentMode = UIViewContentMode.ScaleAspectFill
+        [self.view .addSubview(self.imageRegisterBackground)]
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
     }
@@ -41,37 +44,83 @@ class RegisterViewController: UIViewController {
         //TRYING TO FIND A WAY FOR IMAGE SIZE CHECKER
     }
     
-    @IBAction func signUpPressed(sender: AnyObject) {
-        let username = self.userTextField.text
-        let password = self.passwordTextField.text
-        let email = self.emailTextField.text
-        let fname = self.firstName.text
-        let lname = self.lastName.text
-        let phoneNum = self.phoneNumber.text
-        let finalPhoneNum:Int? = Int(phoneNum!)
-        let pictureData = UIImagePNGRepresentation(imageToUpload.image!)
-    
-        //Upload a new picture
-        //1
-        let file = PFFile(name: "image", data: pictureData!)
+    func showAlert(aTitle: String, aMessage: String) {
+        print("Alert:\nTitle: ", aTitle, "\tMessage", aMessage)
         
-        if username!.characters.count <= 5 {
-            let alert = UIAlertView(title: "Username not long enough!", message: "For your safety, username must be greater than 5 characters", delegate: self, cancelButtonTitle: "Aight")
-            alert.show()
+        let alert = UIAlertController(title: aTitle, message: aMessage, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .Default) { _ in })
+        self.presentViewController(alert, animated: true){}
+    }
+    
+    func allValidFields() -> Bool {
+        alertTitle = ""
+        alertMessage = ""
+        var isAllValid = true
+        if self.userTextField.text == "" || self.userTextField.text == nil {
+            alertTitle = "Empty field!"
+            alertMessage += "A Username is required. "
+            isAllValid = false
+        } else if self.userTextField.text?.characters.count <= 4 {
+            alertTitle = "Username too short!"
+            alertMessage += "For your safety, your Username must be at least 5 characters. "
+            isAllValid = false
+        } else if self.passwordTextField.text == "" || self.passwordTextField.text == nil {
+            alertTitle = "Empty field!"
+            alertMessage += "A Password is required. "
+            isAllValid = false
+        } else if self.passwordTextField.text?.characters.count <= 4 {
+            alertTitle = "Security issue!"
+            alertMessage += "To maximize security, your password must be at least 5 characters. "
+            isAllValid = false
+        } else if self.emailTextField.text == "" || self.emailTextField.text == nil {
+            alertTitle = "Empty email address!"
+            alertMessage += "An email address is required. "
+            isAllValid = false
+        } else if self.emailTextField.text?.characters.contains("@") == false || self.emailTextField.text?.characters.contains(".") == false {
+            alertTitle = "Invalid email address!"
+            alertMessage += "Double check your email address. "
+            isAllValid = false
+        } else if self.phoneNumber.text?.characters.count >= 1 && self.phoneNumber.text?.characters.count <= 10 {
+            alertTitle = "Invalid phone number!"
+            alertMessage += "Double check your phone number. "
+            isAllValid = false
+        }
+        alertMessage += "Try again."
+        return isAllValid
+    }
+    
+    @IBAction func signUpPressed(sender: AnyObject) {
+        if allValidFields() == true {
+            let username = self.userTextField.text
+            let password = self.passwordTextField.text
+            let email = self.emailTextField.text
+            let fname = self.firstName.text
+            let lname = self.lastName.text
             
-        } else if password!.characters.count == 0 {
-            let alert = UIAlertView(title: "Empty password!", message: "Password must be greater than 8 characters", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
+            let phoneNum = self.phoneNumber.text
+            var finalPhoneNum: Int = 0
             
-        } else if password!.characters.count < 5 {
-            let alert = UIAlertView(title: "Password not long enough!", message: "For your safety, password must be greater than 5 characters", delegate: self, cancelButtonTitle: "Aight fam")
-            alert.show()
+            if self.phoneNumber.text == nil || self.phoneNumber.text?.characters.count <= 0 {
+                finalPhoneNum = 0
+            } else {
+                finalPhoneNum = Int(phoneNum!)!
+            }
             
-        } else if email!.characters.count < 5 {
-            let alert = UIAlertView(title: "Invalid email!", message: "Please enter a valid email address.", delegate: self, cancelButtonTitle: "Gotcha")
-            alert.show()
+            // let pictureData = UIImagePNGRepresentation(imageToUpload.image!)
             
-        } else {
+            var pictureData = NSData()
+            
+            if (imageToUpload.image != nil){
+                pictureData = UIImagePNGRepresentation(imageToUpload.image!)!
+            } else {
+                pictureData = UIImagePNGRepresentation(UIImage(named: "userplaceholder.png")!)!
+            }
+            
+            
+            //Upload a new picture
+            //1
+            let file = PFFile(name: "image", data: pictureData)
+            
             let finalEmail = email!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
             spinner.startAnimating()
@@ -88,29 +137,38 @@ class RegisterViewController: UIViewController {
             user["last_name"] = lname
             user["image"] = file
             
-            
-            
             //3
             user.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
                 // Stop the spinner
                 spinner.stopAnimating()
                 if ((error) != nil) {
-                    let alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
-                    
+                    let alert5 = UIAlertController(title: "Error!", message:"Double check.", preferredStyle: .Alert)
+                    alert5.addAction(UIAlertAction(title: "Okay", style: .Default) { _ in })
+                    self.presentViewController(alert5, animated: true){}
                 } else {
                     print("New account creation successful")
-                    let alert = UIAlertView(title: "Success", message: "Signed Up", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HouseholdsOverview")
-                        self.presentViewController(viewController, animated: true, completion: nil)
-                        //self.performSegueWithIdentifier(self.scrollViewWallSegue, sender: nil)
-                    })
+                    
+                    let alert5 = UIAlertController(title: "Welcome \(username!)!", message:"Your registration was successful.", preferredStyle: .Alert)
+                    alert5.addAction(UIAlertAction(title: "Okay", style: .Default) { action -> Void in
+                        // if this is the first time the user is logging in after registration
+                        // if there is no occupancy where occupant == currentuser
+                        // then alert and ask what you want the user to do.
+                        
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupancyDetail")
+                            self.presentViewController(viewController, animated: true, completion: nil)
+                            //self.performSegueWithIdentifier(self.scrollViewWallSegue, sender: nil)
+                        })
+                        
+                        })
+                    self.presentViewController(alert5, animated: true){}
                 }
             })
+        } else {
+            showAlert(alertTitle, aMessage: alertMessage)
         }
     }
+    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)

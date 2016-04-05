@@ -12,7 +12,12 @@ class GroceryTableViewController: PFQueryTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("class: GroceryTVC")
+        print("class: GroceryTVC")/*
+        if self.revealViewController() != nil {
+            openMenu.target = self.revealViewController()
+            openMenu.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }*/
     }
     
     // Every time the view appears, you want to reload the query and the table view.

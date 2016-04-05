@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class CreateListingViewController: UIViewController {
-    
     @IBOutlet weak var groceryTitle: UITextField!
     
     // Occupy Object
@@ -23,6 +22,7 @@ class CreateListingViewController: UIViewController {
         // this block of code grabs the current Occupancy
         let occupancyQuery = PFQuery(className: Occupy.parseClassName())
         occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.whereKey("occupant", equalTo: PFUser.currentUser()!)
         occupancyQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 self.currentOccupancyForNewListing = objects![0]
@@ -45,7 +45,7 @@ class CreateListingViewController: UIViewController {
             self.presentViewController(alert, animated: true){}
             return true
         } else {
-            print("They are okay")
+            // print("They are okay")
             return false
         }
     }
@@ -81,9 +81,9 @@ class CreateListingViewController: UIViewController {
                             print("Listing to be saved\n: \(listing)")
                             print("Created new listing successfully")
                             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                //let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupancyDetail")
-                                //self.presentViewController(viewController, animated: true, completion: nil)
-                                self.navigationController?.popViewControllerAnimated(true)
+                                let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("OccupancyDetail")
+                                self.presentViewController(viewController, animated: true, completion: nil)
+                                //self.navigationController?.popViewControllerAnimated(true)
                             })
                         } else {
                             if let errorMessage = error?.userInfo["error"] as? String {

@@ -29,18 +29,19 @@ class HouseholdBillTableViewController: PFQueryTableViewController {
             print("theSwitch is nil")
             theSwitch = 1 // default to showing household bills
         }
-        
         self.tableView.rowHeight = 30
         
+        /*
         let occupancyQuery = PFQuery(className: Occupy.parseClassName())
         occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.whereKey("occupant", equalTo: PFUser.currentUser()!)
         occupancyQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil {
                 self.currentOccupancy = objects![0]
             } else {
                 print("Sorry, couldn't get the Occupancy")
             }
-        }
+        }*/
         
         self.title = "Bills"
     }
@@ -52,15 +53,21 @@ class HouseholdBillTableViewController: PFQueryTableViewController {
     override func queryForTable() -> PFQuery {
         print("\n\nTJbilszClass: BillTVC\nfunc queryForTable() PFQ")
         let billQuery = Bill.query()
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.whereKey("occupant", equalTo: PFUser.currentUser()!)
         billQuery?.includeKey("household")
         billQuery?.includeKey("creator")
-        if currentOccupancy != nil { billQuery?.whereKey("household", equalTo: (currentOccupancy?.objectForKey("household"))!) }
+        billQuery!.whereKey("household", matchesKey: "household", inQuery: occupancyQuery)
+        // billQuery?.whereKey("household", equalTo: (currentOccupancy?.objectForKey("household"))!)
+        
         return billQuery!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {
         // print("\nClass: HouseholdBillTVC\nfunc tableView\n...\nret cell")
-        //print("The ob: ",object)
+        // print("The ob: ",object)
         
         
         let cell = tableView.dequeueReusableCellWithIdentifier("HouseholdBillCell", forIndexPath: indexPath) as! HouseholdBillTableViewCell

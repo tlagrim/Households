@@ -6,3 +6,5 @@
 #import <ParseUI/ParseUI.h>
 #import <Bolts/Bolts.h>
 #import "SWRevealViewController.h"
+#import "FLAnimatedImage.h"
+#import "FLAnimatedImageView.h"
