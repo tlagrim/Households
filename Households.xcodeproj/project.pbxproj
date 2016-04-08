@@ -27,6 +27,8 @@
 		7C5B060C1C5F409200E137E4 /* OccupyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B060B1C5F409200E137E4 /* OccupyTableViewController.swift */; };
 		7C5B060E1C5F40B500E137E4 /* Occupy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B060D1C5F40B500E137E4 /* Occupy.swift */; };
 		7C5B06101C5F40C400E137E4 /* OccupyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B060F1C5F40C400E137E4 /* OccupyTableViewCell.swift */; };
+		7C615D9B1CB40DBE00D531AF /* householdsmainlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C615D9A1CB40DBE00D531AF /* householdsmainlogo.png */; };
+		7C615D9D1CB40E2E00D531AF /* beautiful-home-design.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C615D9C1CB40E2E00D531AF /* beautiful-home-design.jpg */; };
 		7C8824441C73262100803A7C /* grocerybag.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C8824431C73262100803A7C /* grocerybag.jpg */; };
 		7C9002D61C9823C900F8A1BF /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9002D31C9823C900F8A1BF /* FLAnimatedImage.m */; };
 		7C9002D71C9823C900F8A1BF /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9002D51C9823C900F8A1BF /* FLAnimatedImageView.m */; };
@@ -109,6 +111,8 @@
 		7C5B060B1C5F409200E137E4 /* OccupyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccupyTableViewController.swift; sourceTree = "<group>"; };
 		7C5B060D1C5F40B500E137E4 /* Occupy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Occupy.swift; sourceTree = "<group>"; };
 		7C5B060F1C5F40C400E137E4 /* OccupyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccupyTableViewCell.swift; sourceTree = "<group>"; };
+		7C615D9A1CB40DBE00D531AF /* householdsmainlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = householdsmainlogo.png; sourceTree = "<group>"; };
+		7C615D9C1CB40E2E00D531AF /* beautiful-home-design.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "beautiful-home-design.jpg"; sourceTree = "<group>"; };
 		7C8824431C73262100803A7C /* grocerybag.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grocerybag.jpg; sourceTree = "<group>"; };
 		7C9002D21C9823C900F8A1BF /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
 		7C9002D31C9823C900F8A1BF /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
@@ -608,7 +612,9 @@
 				7C1388451C6069CF00862041 /* Ellen_H._Swallow_Richards_House_Boston_MA_01.jpg */,
 				7C9002D81C9824EA00F8A1BF /* studylapse.gif */,
 				7C1388531C6074B500862041 /* chore.jpg */,
+				7C615D9A1CB40DBE00D531AF /* householdsmainlogo.png */,
 				7C0604A11C9236A200107470 /* userplaceholder.png */,
+				7C615D9C1CB40E2E00D531AF /* beautiful-home-design.jpg */,
 				7C8824431C73262100803A7C /* grocerybag.jpg */,
 				7C1388431C60529300862041 /* DSC_1133.JPG */,
 				7C1388471C606AB200862041 /* houseplaceholder.png */,
@@ -761,7 +767,9 @@
 				7C9002D91C9824EA00F8A1BF /* studylapse.gif in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
 				7C1388541C6074B500862041 /* chore.jpg in Resources */,
+				7C615D9D1CB40E2E00D531AF /* beautiful-home-design.jpg in Resources */,
 				7C1388481C606AB200862041 /* houseplaceholder.png in Resources */,
+				7C615D9B1CB40DBE00D531AF /* householdsmainlogo.png in Resources */,
 				7C0604A21C9236A200107470 /* userplaceholder.png in Resources */,
 				7C5B06071C5F307700E137E4 /* DSC_1152.JPG in Resources */,
 			);

@@ -33,6 +33,7 @@ class RegisterViewController: UIViewController {
         [self.view .addSubview(self.imageRegisterBackground)]
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        imageRegisterBackground.hidden = true
     }
     
     @IBAction func selectPicturePressed(sender: AnyObject) {

@@ -14,6 +14,21 @@ class HouseholdTableViewController: PFQueryTableViewController {
         super.viewDidLoad()
         print("class: theHouseholdTVC")
     }
+    override func viewDidAppear(animated: Bool) {
+        // 1
+        let nav = self.navigationController?.navigationBar
+        // 2
+        nav?.barStyle = UIBarStyle.Black
+        nav?.tintColor = UIColor.yellowColor()
+        // 3
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        imageView.contentMode = .ScaleAspectFit
+        // 4
+        let image = UIImage(named: "householdsmainlogo")
+        imageView.image = image
+        // 5
+        navigationItem.titleView = imageView
+    }
     
     @IBAction func logOutPressed(sender: AnyObject) {
         print("Pressed logout")

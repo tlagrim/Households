@@ -24,6 +24,8 @@ class LoginViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         print("Inside viewdidload of LoginVC")
+        
+        imageLoginBackground.hidden = true
     }
     
     @IBAction func logInPressed(sender: AnyObject) {
