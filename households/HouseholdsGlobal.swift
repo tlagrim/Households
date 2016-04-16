@@ -11,14 +11,16 @@ import Foundation
 // For the case where there is no internet connection
 //  For every user that has signed into this device,
 //  securely save all their information including username
-//  and password so that they may be able to sign in and edit 
+//  and password so that they may be able to sign in and edit
 //  how they like.
 
 var existingHouseholds:[PFObject] = []
 var existingOccupancies:[PFObject] = []
 var existingUsers:[PFUser] = []
+var existingUsersInActiveOccupancy:[PFUser] = []
 var existingBills:[PFObject] = []
 var existingPayments: [PFObject] = []
+
 
 var existingHouseholdBills: [PFObject] = []
 var existingJustMeBills: [PFObject] = []
@@ -37,6 +39,43 @@ struct GlobalInitializers {
                 }
             } else {
                 print("ERROR IN \'existingHouseholdQuery\'")
+            }
+        }
+    }
+    
+    func createUsersInActiveOccupancy() {
+        existingUsersInActiveOccupancy = []
+        
+        let occupancyQuery = PFQuery(className: Occupy.parseClassName())
+        occupancyQuery.includeKey("occupant")
+        occupancyQuery.includeKey("household")
+        occupancyQuery.whereKey("is_active_occupancy", equalTo: true)
+        occupancyQuery.whereKey("occupant", equalTo: PFUser.currentUser()!)
+        let userQuery = PFUser.query()
+        let householdQuery = PFQuery(className: Household.parseClassName())
+        
+        
+        let allOccupanciesQuery = PFQuery(className: Occupy.parseClassName())
+        allOccupanciesQuery.includeKey("occupant")
+        allOccupanciesQuery.includeKey("household")
+        
+        occupancyQuery.findObjectsInBackgroundWithBlock { (theOccupant, error) -> Void in
+            if error == nil {
+                for currentOccupant in theOccupant! {
+                allOccupanciesQuery.findObjectsInBackgroundWithBlock { (allOccupants, error) -> Void in
+                    if error == nil {
+                        for thisOccupant in allOccupants! {
+                            if thisOccupant.objectForKey("household") as! Household == currentOccupant.objectForKey("household") as! Household {
+                                existingUsersInActiveOccupancy.append(thisOccupant.objectForKey("occupant") as! PFUser)
+                            }
+                        }
+                    } else {
+                        print("ERROR IN \'allOccupanciesQuery\'")
+                    }
+                }
+                }
+            } else {
+                print("ERROR IN \'occupancyQuery\'")
             }
         }
     }

@@ -177,6 +177,7 @@ class OccupyTableViewController: PFQueryTableViewController {
         let obj = self.objects![indexPath.row]
         //theBillsArray = GlobalInitializers().sortBillForHousehold(obj.objectForKey("household")?.valueForKey("objectId") as? String)!
         GlobalInitializers().filterBillForHousehold(obj.objectForKey("household")?.valueForKey("objectId") as! String)
+        GlobalInitializers().createUsersInActiveOccupancy()
         for object in objects! {
             if object.valueForKey("is_active_occupancy") as! NSObject == 1 {
                 object.setValue(false, forKey: "is_active_occupancy")

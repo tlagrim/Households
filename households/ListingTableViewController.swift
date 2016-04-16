@@ -6,10 +6,14 @@
 //
 //
 
+
 import Foundation
+import FlatUIKit
+
 
 class ListingTableViewController: PFQueryTableViewController {
     
+    @IBOutlet weak var newListingButton: UIBarButtonItem!
     // both objects are Occupy objects
     var currentOccupancy: PFObject?
     // var currentOccupancy2: PFObject?
@@ -31,6 +35,9 @@ class ListingTableViewController: PFQueryTableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.toolbarHidden=false
+        self.newListingButton.tintColor = UIColor.whiteColor()
+        self.navigationController?.toolbar.barTintColor=UIColor.darkGrayColor()
         
         if self.revealViewController() != nil {
             openMenu.target = self.revealViewController()
@@ -40,22 +47,7 @@ class ListingTableViewController: PFQueryTableViewController {
             print("revealVC is nil")
             
         }
-        
-        // NOTE: when currentOccupancy comes in,
-        // immediately query for the household and users
-        /// maybe this way we'll get the info before I need it.
-        /*
-        if currentOccupancy == nil && currentOccupancy2 == nil { 
-            print("both are nil")
-        } else if currentOccupancy == nil && currentOccupancy2 != nil{
-            print ("1st is nil, 2nd is not nil")
-            currentOccupancy = currentOccupancy2
-        } else if currentOccupancy != nil && currentOccupancy2 == nil {
-            print ("2nd is nil, 1st is not nil")
-        } else {
-            print("both are not nil")
-            currentOccupancy = currentOccupancy2
-        }*/
+
         
         // this block of code grabs the current Occupancy
         let occupancyQuery = PFQuery(className: Occupy.parseClassName())
@@ -71,15 +63,11 @@ class ListingTableViewController: PFQueryTableViewController {
                 print("Sorry, couldn't get the Occupancy")
             }
         }
-        
-        //let household = currentOccupancy?.objectForKey("household")
-        //let householdName = household?.valueForKey("household_name")
-        
-        //self.title = householdName?.description
-        self.title = "Grocery List"
-        //print("self.title = currentOccupancy?.description")
-        //print(currentOccupancy?.description)
-        
+    }
+    
+    
+    @IBAction func pressedTool(sender: AnyObject) {
+        print("Suh du")
     }
     
     override func viewWillAppear(animated: Bool) {

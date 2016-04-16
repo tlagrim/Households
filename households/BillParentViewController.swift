@@ -34,7 +34,6 @@ class BillParentViewController: PFQueryTableViewController {
         let household = currentOccupancy?.objectForKey("household")
         let householdName = household?.valueForKey("household_name")
     
-        self.title = "Bills"
 
     }
 

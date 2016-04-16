@@ -119,11 +119,17 @@ class JustMeBillTableViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let theBillObj = self.objects![indexPath.row]
-        let theBillAmount = theBillObj.valueForKey("total_amount")
-        let theBillName = theBillObj.valueForKey("desc")
-        theParentVC!.amtBillPressedLabel.text = theBillAmount?.description
-        theParentVC!.nameBillPressedLabel.text = theBillName?.description
-        // print("Household Name: ", theBillObj.objectForKey("household")!.valueForKey("household_name")!)
+
+        if self.objects?.count > 0 && self.objects?.count > indexPath.row {
+            let theBillObj = self.objects![indexPath.row]
+            let theBillAmount = theBillObj.valueForKey("total_amount")
+            let theBillName = theBillObj.valueForKey("desc")
+            theParentVC!.amtBillPressedLabel.text = theBillAmount?.description
+            theParentVC!.nameBillPressedLabel.text = theBillName?.description
+            // print("Household Name: ", theBillObj.objectForKey("household")!.valueForKey("household_name")!)
+            
+        } else {
+            self.loadNextPage()
+        }
     }
 }

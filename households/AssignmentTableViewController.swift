@@ -41,7 +41,6 @@ class AssignmentTableViewController: PFQueryTableViewController {
             openMenu.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        self.title = "Chores"
     }
     
     override func viewDidAppear(animated: Bool) {
